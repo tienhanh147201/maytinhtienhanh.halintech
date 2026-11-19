@@ -45,17 +45,17 @@
         .nav-links a:hover { color: var(--sky-bright); }
         .nav-cta { background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021 !important; padding: 6px 14px; border-radius: 99px; font-weight: 800 !important; font-size: 12px; box-shadow: 0 3px 12px var(--sky-glow); }
 
-        /* 3. HERO SECTION (CO GỌN CÂN ĐỐI) */
-        .hero { padding: 38px 6% 46px; background: radial-gradient(circle at 20% 25%, #0c4a8a 0%, #082344 48%, #071324 88%); display: grid; grid-template-columns: 1.1fr 1fr; gap: 34px; align-items: center; max-width: 1280px; margin: 0 auto; }
+        /* 3. HERO SECTION */
         .hero-wrap { background: radial-gradient(circle at 20% 25%, #0c4a8a 0%, #082344 48%, #071324 88%); }
+        .hero { padding: 38px 6% 46px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 34px; align-items: center; max-width: 1280px; margin: 0 auto; }
         .hero-pill { display: inline-block; background: rgba(56, 189, 248, 0.15); color: var(--sky-bright); border: 1px solid rgba(56, 189, 248, 0.38); padding: 4px 12px; border-radius: 99px; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; margin-bottom: 12px; }
         .hero h1 { font-size: 34px; font-weight: 900; color: #fff; line-height: 1.18; margin-bottom: 12px; }
         .hero h1 span { color: var(--sky-bright); }
         .hero p { font-size: 13.5px; color: #cbd5e1; margin-bottom: 18px; max-width: 500px; line-height: 1.55; }
         .hero-btns { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-        .btn-sky { background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021; padding: 9px 20px; border-radius: 99px; font-weight: 800; font-size: 13px; transition: 0.2s; box-shadow: 0 4px 14px var(--sky-glow); display: inline-flex; align-items: center; justify-content: center; }
+        .btn-sky { background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021; padding: 9px 20px; border-radius: 99px; font-weight: 800; font-size: 13px; transition: 0.2s; box-shadow: 0 4px 14px var(--sky-glow); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; border: none; }
         .btn-sky:hover { transform: translateY(-1px); filter: brightness(1.06); }
-        .btn-sky-outline { border: 1px solid rgba(56, 189, 248, 0.48); color: #e0f2fe; padding: 9px 20px; border-radius: 99px; font-weight: 700; font-size: 13px; transition: 0.2s; background: rgba(14, 165, 233, 0.08); display: inline-flex; align-items: center; justify-content: center; }
+        .btn-sky-outline { border: 1px solid rgba(56, 189, 248, 0.48); color: #e0f2fe; padding: 9px 20px; border-radius: 99px; font-weight: 700; font-size: 13px; transition: 0.2s; background: rgba(14, 165, 233, 0.08); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
         .btn-sky-outline:hover { border-color: var(--sky-bright); color: #fff; background: rgba(14, 165, 233, 0.18); }
 
         .hero-stats { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
@@ -132,13 +132,17 @@
         .about-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 32px; align-items: center; }
         .about-cover-left { width: 100%; max-height: 280px; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 28px rgba(2, 132, 199, 0.16); border: 1px solid var(--sky-tint-border); background: #0a192f; }
         .about-cover-left img { width: 100%; height: 280px; display: block; object-fit: cover; }
-        .about-text h2 { font-size: 24px; font-weight: 900; color: #071b36; margin-bottom: 10px; }
+        .about-heading-link { display: inline-block; color: #071b36; transition: 0.2s; }
+        .about-heading-link:hover h2 { color: var(--sky-dark); text-decoration: underline; }
+        .about-text h2 { font-size: 24px; font-weight: 900; margin-bottom: 10px; }
         .about-text p { font-size: 13px; color: #334155; margin-bottom: 10px; line-height: 1.55; }
-        .about-btns { display: flex; flex-direction: column; gap: 8px; max-width: 280px; margin-top: 14px; }
-        .btn-navy-solid { background: #071b36; color: #fff; padding: 9px 16px; border-radius: 99px; font-size: 12px; font-weight: 700; text-align: center; }
-        .btn-sky-border { border: 1.5px solid var(--sky-dark); color: var(--sky-dark); padding: 8px 16px; border-radius: 99px; font-size: 12px; font-weight: 700; text-align: center; background: #fff; }
+        .about-btns { display: flex; flex-direction: column; gap: 8px; max-width: 285px; margin-top: 14px; }
+        .btn-navy-solid { background: #071b36; color: #fff; padding: 9px 16px; border-radius: 99px; font-size: 12px; font-weight: 700; text-align: center; transition: 0.2s; }
+        .btn-navy-solid:hover { background: var(--sky-dark); }
+        .btn-sky-border { border: 1.5px solid var(--sky-dark); color: var(--sky-dark); padding: 8px 16px; border-radius: 99px; font-size: 12px; font-weight: 700; text-align: center; background: #fff; transition: 0.2s; }
+        .btn-sky-border:hover { background: var(--sky-tint-bg); }
 
-        /* 9. LIÊN HỆ & BẢN ĐỒ TƯƠNG TÁC CLICK LẤY VỊ TRÍ */
+        /* 9. LIÊN HỆ & BẢN ĐỒ */
         .contact-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 32px; align-items: center; }
         .contact-title { font-size: 24px; font-weight: 900; color: #fff; line-height: 1.25; margin-bottom: 16px; }
         .c-row { display: flex; gap: 11px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--navy-border); }
@@ -146,19 +150,17 @@
         .c-info strong { display: block; font-size: 13px; color: #fff; margin-bottom: 1px; }
         .c-info span { font-size: 12px; color: #94a3b8; }
         .c-info a { color: var(--sky-bright); font-weight: 600; }
+        .c-info a:hover { text-decoration: underline; }
         .contact-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
 
-        /* BẢN ĐỒ ĐẸP CÓ CƠ CHẾ CLICK VÀO BẤT KỲ ĐÂU ĐỂ MỞ VỊ TRÍ */
-        .interactive-map-link { display: block; width: 100%; height: 295px; border-radius: 15px; overflow: hidden; border: 1px solid rgba(56, 189, 248, 0.45); position: relative; background: linear-gradient(145deg, #0a2447 0%, #07172e 100%); box-shadow: 0 12px 28px rgba(0,0,0,0.35); transition: 0.25s; cursor: pointer; }
-        .interactive-map-link:hover { border-color: var(--sky-bright); transform: translateY(-2px); box-shadow: 0 14px 32px rgba(14, 165, 233, 0.25); }
-        .map-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(56, 189, 248, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.12) 1px, transparent 1px); background-size: 28px 28px; }
-        .map-road-h { position: absolute; top: 44%; left: 0; right: 0; height: 8px; background: rgba(56, 189, 248, 0.22); transform: rotate(-3deg); }
-        .map-road-v { position: absolute; top: 0; bottom: 0; left: 56%; width: 7px; background: rgba(56, 189, 248, 0.18); transform: rotate(4deg); }
-        .map-pin-center { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 18px; }
-        .map-marker-badge { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021; font-size: 22px; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px rgba(56, 189, 248, 0.22); margin-bottom: 10px; }
-        .map-card-caption { background: rgba(7, 19, 36, 0.9); border: 1px solid rgba(56, 189, 248, 0.4); padding: 10px 16px; border-radius: 12px; max-width: 310px; }
-        .map-card-caption strong { display: block; color: #fff; font-size: 13.5px; margin-bottom: 2px; }
-        .map-card-caption span { color: var(--sky-bright); font-size: 11.5px; font-weight: 600; }
+        /* KHUNG BẢN ĐỒ CƠ SỞ 1 (67 NGUYỄN ĐỔNG CHI) CLICK MỞ LINK CHÍNH */
+        .map-frame-box { display: block; width: 100%; height: 295px; border-radius: 15px; overflow: hidden; border: 1px solid rgba(56, 189, 248, 0.45); position: relative; background: #09182e; box-shadow: 0 12px 28px rgba(0,0,0,0.35); transition: 0.25s; }
+        .map-frame-box:hover { border-color: var(--sky-bright); transform: translateY(-2px); }
+        .map-frame-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .map-overlay-bar { position: absolute; left: 12px; right: 12px; bottom: 12px; background: rgba(7, 19, 36, 0.92); border: 1px solid rgba(56, 189, 248, 0.45); border-radius: 11px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+        .map-overlay-bar strong { display: block; font-size: 12.5px; color: #fff; }
+        .map-overlay-bar span { font-size: 11px; color: var(--sky-bright); font-weight: 600; }
+        .map-open-pill { background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021; font-size: 11px; font-weight: 800; padding: 5px 11px; border-radius: 99px; white-space: nowrap; }
 
         /* 10. FOOTER */
         footer { background: #040c18; padding: 18px 6%; border-top: 1px solid var(--navy-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: #94a3b8; }
@@ -193,7 +195,7 @@
             .sec-title, .about-text h2, .contact-title { font-size: 21px; }
             .cat-grid, .prod-grid, .why-grid, .gallery-grid { grid-template-columns: 1fr; gap: 12px; }
             .floating-price-card { position: static; margin-top: 10px; display: inline-block; }
-            .interactive-map-link { height: 230px; }
+            .map-frame-box { height: 235px; }
         }
     </style>
 </head>
@@ -608,11 +610,13 @@
 
                 <div class="about-text">
                     <span class="sec-tag">Giới thiệu</span>
-                    <h2>Về HaLin Tech - Máy Tính Tiến Hạnh</h2>
+                    <a href="https://www.facebook.com/halintech" target="_blank" class="about-heading-link" title="Mở Facebook HaLin Tech - Máy Tính Tiến Hạnh">
+                        <h2>Về HaLin Tech - Máy Tính Tiến Hạnh</h2>
+                    </a>
                     <p><strong>HaLin Tech (Máy Tính Tiến Hạnh – Tiến Hạnh PC Gaming)</strong> chuyên cung cấp máy tính gaming, máy văn phòng, workstation Xeon, laptop, linh kiện và phụ kiện máy tính chính hãng.</p>
                     <p>Mỗi đơn hàng là một lần được khách hàng tin tưởng. Chúng tôi giữ vững ba điều: tư vấn đúng nhu cầu và ngân sách, máy chính hãng với bảo hành rõ ràng, và hỗ trợ kỹ thuật tận tâm sau bán hàng.</p>
                     <div class="about-btns">
-                        <a href="https://www.facebook.com/tienhanh.halintech/" target="_blank" class="btn-navy-solid">Facebook Máy Tính Tiến Hạnh</a>
+                        <a href="https://www.facebook.com/MayTinhTienHanh.HaLinTech" target="_blank" class="btn-navy-solid">Facebook Máy Tính Tiến Hạnh</a>
                         <a href="https://zalo.me/0988373446" target="_blank" class="btn-sky-border">Tư vấn Zalo: 0988373446</a>
                     </div>
                 </div>
@@ -620,7 +624,7 @@
         </div>
     </section>
 
-    <!-- 9. LIÊN HỆ & BẢN ĐỒ CLICK LẤY VỊ TRÍ -->
+    <!-- 9. LIÊN HỆ & BẢN ĐỒ -->
     <section class="sec-navy" id="lienhe">
         <div class="sec-inner">
             <div class="contact-grid">
@@ -632,7 +636,7 @@
                         <div class="c-icon">📍</div>
                         <div class="c-info">
                             <strong>Cơ sở 1 – Từ Liêm, Hà Nội</strong>
-                            <span>67 Nguyễn Đổng Chi, Từ Liêm, Hà Nội · <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank">Lấy vị trí Map</a></span>
+                            <span>67 Nguyễn Đổng Chi, Từ Liêm, Hà Nội · <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank">Chỉ đường</a></span>
                         </div>
                     </div>
 
@@ -640,7 +644,7 @@
                         <div class="c-icon">📍</div>
                         <div class="c-info">
                             <strong>Cơ sở 2 – Thiệu Hóa, Thanh Hóa</strong>
-                            <span>Thiệu Hóa, Thanh Hóa · <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank">Lấy vị trí Map</a></span>
+                            <span>Thiệu Hóa, Thanh Hóa · <a href="https://maps.app.goo.gl/R1338Z7uuyxJZvwGA" target="_blank">Chỉ đường</a></span>
                         </div>
                     </div>
 
@@ -648,7 +652,7 @@
                         <div class="c-icon">📞</div>
                         <div class="c-info">
                             <strong>Hotline / Zalo</strong>
-                            <span><a href="https://zalo.me/0988373446" target="_blank">0988 373 446</a> · <a href="tel:0388548689">0388 548 689</a></span>
+                            <span><a href="tel:0988373446">0988 373 446</a> · <a href="tel:0388548689">0388 548 689</a></span>
                         </div>
                     </div>
 
@@ -661,22 +665,20 @@
                     </div>
 
                     <div class="contact-actions">
-                        <a href="https://zalo.me/0988373446" target="_blank" class="btn-sky">Tư vấn Zalo 0988373446</a>
-                        <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank" class="btn-sky-outline">Mở vị trí Google Map</a>
+                        <a href="tel:0988373446" class="btn-sky">Gọi ngay</a>
+                        <a href="https://zalo.me/0988373446" target="_blank" class="btn-sky-outline">Chat Zalo</a>
                     </div>
                 </div>
 
-                <!-- KHUNG BẢN ĐỒ: CLICK VÀO BẤT KỲ ĐÂU ĐỀU MỞ VỊ TRÍ ĐÃ GHIM -->
-                <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank" class="interactive-map-link" title="Nhấn vào bản đồ để lấy vị trí trên Google Maps">
-                    <div class="map-grid-bg"></div>
-                    <div class="map-road-h"></div>
-                    <div class="map-road-v"></div>
-                    <div class="map-pin-center">
-                        <div class="map-marker-badge">📍</div>
-                        <div class="map-card-caption">
-                            <strong>HaLin Tech · Máy Tính Tiến Hạnh</strong>
-                            <span>Nhấn vào bản đồ để lấy vị trí & dẫn đường →</span>
+                <!-- BẢN ĐỒ CƠ SỞ 1 (67 NGUYỄN ĐỔNG CHI): Thay link ảnh chụp bản đồ vào id="anh-ban-do-cs1" bên dưới -->
+                <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank" class="map-frame-box" title="Nhấn vào bản đồ để mở vị trí Cơ sở 1 - 67 Nguyễn Đổng Chi">
+                    <img id="anh-ban-do-cs1" src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=900&q=80" alt="Bản đồ Cơ sở 1 - 67 Nguyễn Đổng Chi">
+                    <div class="map-overlay-bar">
+                        <div>
+                            <strong>CS1: 67 Nguyễn Đổng Chi, Từ Liêm, Hà Nội</strong>
+                            <span>Bản đồ chính · Nhấn để mở Google Maps</span>
                         </div>
+                        <span class="map-open-pill">Mở Map →</span>
                     </div>
                 </a>
             </div>
