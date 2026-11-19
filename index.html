@@ -670,17 +670,20 @@
                     </div>
                 </div>
 
-                <!-- BẢN ĐỒ CƠ SỞ 1 (67 NGUYỄN ĐỔNG CHI): Thay link ảnh chụp bản đồ vào id="anh-ban-do-cs1" bên dưới -->
-                <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank" class="map-frame-box" title="Nhấn vào bản đồ để mở vị trí Cơ sở 1 - 67 Nguyễn Đổng Chi">
-                    <img id="anh-ban-do-cs1" src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=900&q=80" alt="Bản đồ Cơ sở 1 - 67 Nguyễn Đổng Chi">
-                    <div class="map-overlay-bar">
-                        <div>
-                            <strong>CS1: 67 Nguyễn Đổng Chi, Từ Liêm, Hà Nội</strong>
-                            <span>Bản đồ chính · Nhấn để mở Google Maps</span>
-                        </div>
-                        <span class="map-open-pill">Mở Map →</span>
-                    </div>
-                </a>
+                <!-- [BẢN ĐỒ CS1 - 67 NGUYỄN ĐỔNG CHI]: Nhúng iframe Google Maps thật + nút mở link ghim -->
+<div class="map-embed-wrap">
+    <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank" rel="noopener noreferrer" class="map-top-btn" title="Mở vị trí Cơ sở 1 trên Google Maps">
+        Mở trong Maps ↗
+    </a>
+    <iframe
+        id="iframe-ban-do-cs1"
+        src="https://www.google.com/maps?q=67+Nguy%E1%BB%85n+%C4%90%E1%BB%95ng+Chi,+C%E1%BA%A7u+Di%E1%BB%85n,+Nam+T%E1%BB%AB+Li%C3%AAm,+H%C3%A0+N%E1%BB%99i&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Bản đồ Cơ sở 1 - 67 Nguyễn Đổng Chi, Hà Nội">
+    </iframe>
+</div>
             </div>
         </div>
     </section>
