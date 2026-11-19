@@ -20,160 +20,170 @@
             --sky-tint-border: #bae0fd;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--navy-bg); color: #e2e8f0; line-height: 1.5; }
+        body { background-color: var(--navy-bg); color: #e2e8f0; line-height: 1.5; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
 
-        /* 1. TOP BAR XANH ĐẬM */
-        .top-bar { background: #040c18; color: #bae6fd; font-size: 12.5px; padding: 9px 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--navy-border); flex-wrap: wrap; gap: 10px; }
-        .top-bar-left, .top-bar-right { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        /* 1. TOP BAR */
+        .top-bar { background: #040c18; color: #bae6fd; font-size: 12.5px; padding: 9px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--navy-border); flex-wrap: wrap; gap: 8px; }
+        .top-bar-left, .top-bar-right { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
         .top-bar strong { color: #fff; font-weight: 600; }
         .top-bar a { color: var(--sky-bright); font-weight: 600; }
-        .top-bar a:hover { text-decoration: underline; }
 
-        /* 2. HEADER XANH CÔNG NGHỆ — LOGO HLT GÓC TRÊN BÊN PHẢI */
-        header { background: linear-gradient(90deg, #071b36 0%, #0b2952 100%); color: #fff; padding: 13px 6%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(56, 189, 248, 0.25); box-shadow: 0 6px 24px rgba(2, 132, 199, 0.18); }
+        /* 2. HEADER (ĐÃ XÓA LOGO HLT GÓC TRÊN BÊN PHẢI & HIỂN THỊ ĐỦ TRÊN MỌI MÀN HÌNH) */
+        header { background: linear-gradient(90deg, #071b36 0%, #0b2952 100%); color: #fff; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(56, 189, 248, 0.25); box-shadow: 0 6px 24px rgba(2, 132, 199, 0.18); flex-wrap: wrap; gap: 10px; }
         .brand-left { display: flex; flex-direction: column; }
         .brand-title { font-weight: 900; font-size: 17px; color: #fff; letter-spacing: -0.2px; }
         .brand-title span { color: var(--sky-bright); }
         .brand-sub { font-size: 11px; color: #7dd3fc; font-weight: 500; }
 
-        .header-right { display: flex; align-items: center; gap: 24px; }
-        .nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
-        .nav-links a { font-size: 13.5px; font-weight: 600; color: #e0f2fe; transition: 0.2s; }
+        .nav-links { display: flex; gap: 16px; list-style: none; align-items: center; flex-wrap: wrap; }
+        .nav-links a { font-size: 13px; font-weight: 600; color: #e0f2fe; transition: 0.2s; white-space: nowrap; }
         .nav-links a:hover { color: var(--sky-bright); }
-        .nav-cta { background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021 !important; padding: 8px 16px; border-radius: 99px; font-weight: 800 !important; font-size: 13px; box-shadow: 0 4px 14px var(--sky-glow); }
+        .nav-cta { background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021 !important; padding: 7px 14px; border-radius: 99px; font-weight: 800 !important; font-size: 12.5px; box-shadow: 0 4px 14px var(--sky-glow); }
 
-        /* LOGO HLT GÓC TRÊN BÊN PHẢI */
-        .hlt-top-logo { display: flex; align-items: center; gap: 8px; background: rgba(14, 165, 233, 0.14); border: 1px solid rgba(56, 189, 248, 0.45); padding: 5px 11px 5px 6px; border-radius: 12px; transition: 0.25s; }
-        .hlt-top-logo:hover { border-color: var(--sky-bright); box-shadow: 0 0 16px var(--sky-glow); }
-        .hlt-mark { width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, #38bdf8, #0284c7); color: #041021; font-weight: 900; font-size: 13px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .hlt-mark img { width: 100%; height: 100%; object-fit: cover; }
-        .hlt-label { font-weight: 900; font-size: 14px; color: #fff; line-height: 1.1; }
-        .hlt-label small { display: block; font-size: 9.5px; color: var(--sky-bright); font-weight: 700; letter-spacing: 0.6px; }
-
-        /* 3. HERO SECTION XANH DA TRỜI */
-        .hero { padding: 62px 6% 72px; background: radial-gradient(circle at 20% 25%, #0c4a8a 0%, #082344 45%, #071324 85%); display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; }
-        .hero-pill { display: inline-block; background: rgba(56, 189, 248, 0.16); color: var(--sky-bright); border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 14px; border-radius: 99px; font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 18px; }
-        .hero h1 { font-size: 44px; font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 18px; }
+        /* 3. HERO SECTION */
+        .hero { padding: 50px 5% 65px; background: radial-gradient(circle at 20% 25%, #0c4a8a 0%, #082344 45%, #071324 85%); display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; }
+        .hero-pill { display: inline-block; background: rgba(56, 189, 248, 0.16); color: var(--sky-bright); border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 14px; border-radius: 99px; font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; }
+        .hero h1 { font-size: 42px; font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 16px; }
         .hero h1 span { color: var(--sky-bright); text-shadow: 0 0 24px rgba(56, 189, 248, 0.35); }
-        .hero p { font-size: 15.5px; color: #cbd5e1; margin-bottom: 28px; max-width: 560px; }
-        .hero-btns { display: flex; gap: 14px; margin-bottom: 38px; flex-wrap: wrap; }
-        .btn-sky { background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021; padding: 13px 26px; border-radius: 99px; font-weight: 800; font-size: 14px; transition: 0.25s; box-shadow: 0 6px 20px var(--sky-glow); }
+        .hero p { font-size: 15px; color: #cbd5e1; margin-bottom: 24px; max-width: 560px; }
+        .hero-btns { display: flex; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+        .btn-sky { background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021; padding: 12px 24px; border-radius: 99px; font-weight: 800; font-size: 14px; transition: 0.25s; box-shadow: 0 6px 20px var(--sky-glow); display: inline-flex; align-items: center; justify-content: center; }
         .btn-sky:hover { transform: translateY(-2px); filter: brightness(1.06); }
-        .btn-sky-outline { border: 1px solid rgba(56, 189, 248, 0.5); color: #e0f2fe; padding: 13px 26px; border-radius: 99px; font-weight: 700; font-size: 14px; transition: 0.25s; background: rgba(14, 165, 233, 0.08); }
+        .btn-sky-outline { border: 1px solid rgba(56, 189, 248, 0.5); color: #e0f2fe; padding: 12px 24px; border-radius: 99px; font-weight: 700; font-size: 14px; transition: 0.25s; background: rgba(14, 165, 233, 0.08); display: inline-flex; align-items: center; justify-content: center; }
         .btn-sky-outline:hover { border-color: var(--sky-bright); color: #fff; background: rgba(14, 165, 233, 0.18); }
-        .hero-stats { display: flex; gap: 42px; flex-wrap: wrap; }
-        .stat-num { font-size: 22px; font-weight: 800; color: var(--sky-bright); }
+
+        /* LƯỢT THEO DÕI FB NGAY DƯỚI NÚT XEM CẤU HÌNH ĐANG BÁN */
+        .fb-follow-row { margin-bottom: 28px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .fb-follow-link { display: inline-flex; align-items: center; gap: 8px; background: rgba(14, 165, 233, 0.14); border: 1px solid rgba(56, 189, 248, 0.45); color: #e0f2fe; padding: 8px 16px; border-radius: 99px; font-size: 13px; font-weight: 700; transition: 0.2s; }
+        .fb-follow-link:hover { background: rgba(56, 189, 248, 0.25); border-color: var(--sky-bright); color: #fff; }
+        .fb-follow-link strong { color: var(--sky-bright); font-weight: 800; }
+
+        .hero-stats { display: flex; gap: 36px; flex-wrap: wrap; }
+        .stat-num { font-size: 21px; font-weight: 800; color: var(--sky-bright); }
         .stat-desc { font-size: 12.5px; color: #94a3b8; margin-top: 2px; }
 
         .hero-visual { position: relative; }
-        .hero-img-box { width: 100%; height: 365px; background: var(--navy-card); border-radius: 20px; overflow: hidden; border: 1px solid rgba(56, 189, 248, 0.35); box-shadow: 0 24px 48px rgba(2, 132, 199, 0.22); }
+        .hero-img-box { width: 100%; height: 350px; background: var(--navy-card); border-radius: 20px; overflow: hidden; border: 1px solid rgba(56, 189, 248, 0.35); box-shadow: 0 24px 48px rgba(2, 132, 199, 0.22); }
         .hero-img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .floating-price-card { position: absolute; bottom: -20px; left: -20px; background: #f0f9ff; color: #071b36; padding: 15px 22px; border-radius: 16px; border: 1px solid var(--sky-tint-border); box-shadow: 0 14px 30px rgba(0,0,0,0.4); }
+        .floating-price-card { position: absolute; bottom: -18px; left: 16px; background: #f0f9ff; color: #071b36; padding: 14px 20px; border-radius: 16px; border: 1px solid var(--sky-tint-border); box-shadow: 0 14px 30px rgba(0,0,0,0.4); }
         .floating-price-card small { display: block; font-size: 12px; color: #0369a1; font-weight: 700; margin-bottom: 2px; }
-        .floating-price-card strong { font-size: 23px; font-weight: 900; color: var(--sky-dark); }
+        .floating-price-card strong { font-size: 22px; font-weight: 900; color: var(--sky-dark); }
 
         /* HEADINGS */
-        .sec-header { text-align: center; margin-bottom: 44px; }
+        .sec-header { text-align: center; margin-bottom: 40px; }
         .sec-tag { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.8px; display: block; margin-bottom: 8px; }
         .sec-sky-tint .sec-tag { color: var(--sky-dark); }
         .sec-navy .sec-tag { color: var(--sky-bright); }
-        .sec-title { font-size: 32px; font-weight: 900; letter-spacing: -0.4px; }
-        .sec-sub { font-size: 14.5px; color: #94a3b8; max-width: 620px; margin: 10px auto 0; }
+        .sec-title { font-size: 30px; font-weight: 900; letter-spacing: -0.4px; }
+        .sec-sub { font-size: 14px; color: #94a3b8; max-width: 620px; margin: 10px auto 0; }
 
-        /* 4. DANH MỤC (TÔNG XANH NHẠT MÁT MẮT - 8 Ô) */
-        .sec-sky-tint { background: var(--sky-tint-bg); color: #071b36; padding: 72px 6%; }
-        .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .cat-card { background: var(--sky-tint-card); border: 1px solid var(--sky-tint-border); border-radius: 16px; padding: 24px 20px; transition: 0.25s; }
-        .cat-card:hover { border-color: var(--sky); background: #fff; box-shadow: 0 12px 26px rgba(2, 132, 199, 0.14); transform: translateY(-4px); }
-        .cat-icon { font-size: 26px; margin-bottom: 12px; display: inline-block; }
-        .cat-card h3 { font-size: 16.5px; font-weight: 800; color: #071b36; margin-bottom: 8px; }
-        .cat-card p { font-size: 13px; color: #475569; line-height: 1.55; }
+        /* 4. DANH MỤC */
+        .sec-sky-tint { background: var(--sky-tint-bg); color: #071b36; padding: 65px 5%; }
+        .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+        .cat-card { background: var(--sky-tint-card); border: 1px solid var(--sky-tint-border); border-radius: 16px; padding: 22px 18px; transition: 0.25s; }
+        .cat-card:hover { border-color: var(--sky); background: #fff; box-shadow: 0 12px 26px rgba(2, 132, 199, 0.14); transform: translateY(-3px); }
+        .cat-icon { font-size: 25px; margin-bottom: 10px; display: inline-block; }
+        .cat-card h3 { font-size: 16px; font-weight: 800; color: #071b36; margin-bottom: 6px; }
+        .cat-card p { font-size: 13px; color: #475569; line-height: 1.5; }
 
-        /* 5. CẤU HÌNH NỔI BẬT (TÔNG XANH ĐẬM CYBER - 6 THẺ) */
-        .sec-navy { background: var(--navy-section); color: #fff; padding: 72px 6%; }
-        .prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        /* 5. CẤU HÌNH NỔI BẬT */
+        .sec-navy { background: var(--navy-section); color: #fff; padding: 65px 5%; }
+        .prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
         .prod-card { background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: 0.25s; }
         .prod-card:hover { border-color: var(--sky-bright); transform: translateY(-4px); box-shadow: 0 14px 30px rgba(14, 165, 233, 0.16); }
         .prod-card.featured { border: 1.5px solid var(--sky-bright); }
-        .prod-badge { position: absolute; top: 14px; left: 14px; background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021; font-size: 11.5px; font-weight: 800; padding: 4px 12px; border-radius: 99px; z-index: 2; }
-        .prod-img { width: 100%; height: 210px; background: #09182e; overflow: hidden; }
+        .prod-badge { position: absolute; top: 12px; left: 12px; background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 99px; z-index: 2; }
+        .prod-img { width: 100%; height: 205px; background: #09182e; overflow: hidden; }
         .prod-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
         .prod-card:hover .prod-img img { transform: scale(1.04); }
-        .prod-body { padding: 20px 22px; }
-        .prod-title { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.35; }
+        .prod-body { padding: 18px 20px; }
+        .prod-title { font-size: 16.5px; font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.35; }
         .spec-list { list-style: none; font-size: 13px; color: #cbd5e1; }
-        .spec-list li { margin-bottom: 7px; padding-left: 14px; position: relative; }
+        .spec-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
         .spec-list li::before { content: "◆"; font-size: 8px; color: var(--sky-bright); position: absolute; left: 0; top: 3px; }
-        .prod-footer { padding: 15px 22px; border-top: 1px solid var(--navy-border); display: flex; justify-content: space-between; align-items: center; background: rgba(4, 12, 24, 0.45); }
-        .prod-price { font-size: 20px; font-weight: 900; color: var(--sky-bright); }
-        .btn-buy { background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021; padding: 8px 18px; border-radius: 99px; font-size: 13px; font-weight: 800; }
+        .prod-footer { padding: 14px 20px; border-top: 1px solid var(--navy-border); display: flex; justify-content: space-between; align-items: center; background: rgba(4, 12, 24, 0.45); gap: 10px; }
+        .prod-price { font-size: 19px; font-weight: 900; color: var(--sky-bright); }
+        .btn-buy { background: linear-gradient(135deg, var(--sky-bright), var(--sky-dark)); color: #041021; padding: 8px 16px; border-radius: 99px; font-size: 13px; font-weight: 800; white-space: nowrap; }
 
-        .needs-box { margin-top: 52px; text-align: center; }
-        .needs-box h4 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 16px; }
-        .needs-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 820px; margin: 0 auto; }
-        .need-pill { background: var(--navy-card); border: 1px solid var(--navy-border); color: #bae6fd; padding: 8px 18px; border-radius: 99px; font-size: 13px; font-weight: 500; }
+        .needs-box { margin-top: 48px; text-align: center; }
+        .needs-box h4 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 14px; }
+        .needs-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; max-width: 820px; margin: 0 auto; }
+        .need-pill { background: var(--navy-card); border: 1px solid var(--navy-border); color: #bae6fd; padding: 7px 16px; border-radius: 99px; font-size: 12.5px; font-weight: 500; }
 
-        /* 6. CAM KẾT (TÔNG XANH NHẠT - 6 Ô) */
-        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .why-card { background: #fff; border: 1px solid var(--sky-tint-border); border-radius: 16px; padding: 26px 22px; transition: 0.25s; }
+        /* 6. CAM KẾT */
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .why-card { background: #fff; border: 1px solid var(--sky-tint-border); border-radius: 16px; padding: 24px 20px; transition: 0.25s; }
         .why-card:hover, .why-card.highlight { border-color: var(--sky); box-shadow: 0 10px 24px rgba(2, 132, 199, 0.12); }
-        .why-num { font-size: 28px; font-weight: 900; color: rgba(2, 132, 199, 0.25); margin-bottom: 8px; }
+        .why-num { font-size: 26px; font-weight: 900; color: rgba(2, 132, 199, 0.28); margin-bottom: 6px; }
         .why-card h3 { font-size: 16px; font-weight: 800; color: #071b36; margin-bottom: 6px; }
-        .why-card p { font-size: 13.5px; color: #475569; }
+        .why-card p { font-size: 13px; color: #475569; }
 
-        /* 7. ĐƠN HÀNG BÀN GIAO MỖI NGÀY (TÔNG XANH ĐẬM) */
-        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-        .gal-item { position: relative; height: 235px; border-radius: 16px; overflow: hidden; background: var(--navy-card); border: 1px solid var(--navy-border); }
+        /* 7. HÌNH ẢNH THỰC TẾ */
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .gal-item { position: relative; height: 225px; border-radius: 16px; overflow: hidden; background: var(--navy-card); border: 1px solid var(--navy-border); }
         .gal-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.35s; }
         .gal-item:hover img { transform: scale(1.05); }
-        .gal-caption { position: absolute; inset: 0; background: linear-gradient(to top, rgba(4, 12, 24, 0.88) 0%, transparent 55%); display: flex; align-items: flex-end; padding: 15px; font-size: 13px; font-weight: 600; color: #fff; }
+        .gal-caption { position: absolute; inset: 0; background: linear-gradient(to top, rgba(4, 12, 24, 0.88) 0%, transparent 55%); display: flex; align-items: flex-end; padding: 14px; font-size: 13px; font-weight: 600; color: #fff; }
 
-        /* 8. GIỚI THIỆU (TÔNG XANH NHẠT — ẢNH BÌA BÊN GÓC TRÁI) */
-        .about-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+        /* 8. GIỚI THIỆU */
+        .about-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
         .about-cover-left { width: 100%; border-radius: 18px; overflow: hidden; box-shadow: 0 18px 38px rgba(2, 132, 199, 0.18); border: 1px solid var(--sky-tint-border); background: #0a192f; }
         .about-cover-left img { width: 100%; height: auto; display: block; object-fit: cover; }
-        .about-text h2 { font-size: 32px; font-weight: 900; color: #071b36; margin-bottom: 14px; }
-        .about-text p { font-size: 14.5px; color: #334155; margin-bottom: 14px; line-height: 1.65; }
-        .about-btns { display: flex; flex-direction: column; gap: 10px; max-width: 310px; margin-top: 20px; }
-        .btn-navy-solid { background: #071b36; color: #fff; padding: 12px 20px; border-radius: 99px; font-size: 13.5px; font-weight: 700; text-align: center; }
-        .btn-sky-border { border: 1.5px solid var(--sky-dark); color: var(--sky-dark); padding: 11px 20px; border-radius: 99px; font-size: 13.5px; font-weight: 700; text-align: center; background: #fff; }
+        .about-text h2 { font-size: 30px; font-weight: 900; color: #071b36; margin-bottom: 12px; }
+        .about-text p { font-size: 14px; color: #334155; margin-bottom: 12px; line-height: 1.65; }
+        .about-btns { display: flex; flex-direction: column; gap: 10px; max-width: 320px; margin-top: 18px; }
+        .btn-navy-solid { background: #071b36; color: #fff; padding: 11px 20px; border-radius: 99px; font-size: 13px; font-weight: 700; text-align: center; }
+        .btn-sky-border { border: 1.5px solid var(--sky-dark); color: var(--sky-dark); padding: 10px 20px; border-radius: 99px; font-size: 13px; font-weight: 700; text-align: center; background: #fff; }
 
-        /* 9. LIÊN HỆ & BẢN ĐỒ (TÔNG XANH ĐẬM) */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 44px; align-items: center; }
-        .contact-title { font-size: 32px; font-weight: 900; color: #fff; line-height: 1.25; margin-bottom: 24px; }
-        .c-row { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--navy-border); }
-        .c-icon { width: 38px; height: 38px; border-radius: 10px; background: rgba(56, 189, 248, 0.14); color: var(--sky-bright); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+        /* 9. LIÊN HỆ & BẢN ĐỒ */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 38px; align-items: center; }
+        .contact-title { font-size: 30px; font-weight: 900; color: #fff; line-height: 1.25; margin-bottom: 20px; }
+        .c-row { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--navy-border); }
+        .c-icon { width: 36px; height: 36px; border-radius: 10px; background: rgba(56, 189, 248, 0.14); color: var(--sky-bright); display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
         .c-info strong { display: block; font-size: 14px; color: #fff; margin-bottom: 2px; }
-        .c-info span { font-size: 13.5px; color: #94a3b8; }
+        .c-info span { font-size: 13px; color: #94a3b8; }
         .c-info a { color: var(--sky-bright); font-weight: 600; }
-        .contact-actions { display: flex; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
-        .map-frame { width: 100%; height: 385px; border-radius: 18px; overflow: hidden; border: 1px solid var(--navy-border); }
-        .map-frame iframe { width: 100%; height: 100%; border: 0; }
+        .contact-actions { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .map-card-box { width: 100%; min-height: 330px; border-radius: 18px; border: 1px solid var(--navy-border); background: var(--navy-card); padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
+        .map-card-box h3 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+        .map-card-box p { font-size: 13.5px; color: #cbd5e1; line-height: 1.6; }
+        .map-pin-preview { background: rgba(14, 165, 233, 0.12); border: 1px dashed rgba(56, 189, 248, 0.5); border-radius: 14px; padding: 18px; color: #e0f2fe; font-size: 13.5px; }
 
         /* 10. FOOTER */
-        footer { background: #040c18; padding: 26px 6%; border-top: 1px solid var(--navy-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; font-size: 13px; color: #94a3b8; }
+        footer { background: #040c18; padding: 24px 5%; border-top: 1px solid var(--navy-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12.5px; color: #94a3b8; }
         .f-brand { display: flex; align-items: center; gap: 8px; color: #fff; font-weight: 800; font-size: 15px; }
         .f-badge { background: var(--sky); color: #041021; font-size: 11px; padding: 2px 7px; border-radius: 5px; font-weight: 900; }
 
         /* FLOATING BUTTONS */
-        .float-wrap { position: fixed; bottom: 22px; right: 22px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
-        .f-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 13px; box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45); transition: 0.2s; }
+        .float-wrap { position: fixed; bottom: 18px; right: 18px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
+        .f-btn { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 12.5px; box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45); transition: 0.2s; }
         .f-btn:hover { transform: scale(1.08); }
         .f-zalo { background: #0068ff; }
-        .f-call { background: var(--sky); color: #041021; font-size: 18px; }
+        .f-call { background: var(--sky); color: #041021; font-size: 17px; }
 
-        @media (max-width: 1024px) {
-            .nav-links { display: none; }
-        }
+        /* RESPONSIVE TỐI ƯU CẢ MÁY TÍNH VÀ ĐIỆN THOẠI */
         @media (max-width: 960px) {
-            .hero, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .hero, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
             .cat-grid, .prod-grid, .why-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .floating-price-card { left: 16px; bottom: 16px; }
+            .hero-img-box { height: 260px; }
         }
         @media (max-width: 600px) {
-            .hero h1 { font-size: 32px; }
-            .cat-grid, .prod-grid, .why-grid, .gallery-grid { grid-template-columns: 1fr; }
+            header { padding: 10px 4%; }
+            .brand-title { font-size: 15.5px; }
+            .nav-links { gap: 8px; }
+            .nav-links a { font-size: 11.5px; padding: 4px 6px; }
+            .nav-cta { padding: 6px 11px !important; font-size: 11.5px !important; }
+            .hero { padding: 32px 4% 45px; }
+            .hero h1 { font-size: 28px; }
+            .hero-stats { gap: 20px; }
+            .sec-sky-tint, .sec-navy { padding: 48px 4%; }
+            .sec-title, .about-text h2, .contact-title { font-size: 24px; }
+            .cat-grid, .prod-grid, .why-grid, .gallery-grid { grid-template-columns: 1fr; gap: 14px; }
+            .floating-price-card { position: static; margin-top: 12px; display: inline-block; }
+            .map-card-box { padding: 20px; }
+            .float-wrap { bottom: 14px; right: 14px; }
+            .f-btn { width: 44px; height: 44px; font-size: 11.5px; }
         }
     </style>
 </head>
@@ -193,30 +203,22 @@
         </div>
     </div>
 
-    <!-- 2. HEADER (LOGO HLT NẰM GÓC TRÊN BÊN PHẢI) -->
+    <!-- 2. HEADER (ĐÃ BỎ LOGO HLT GÓC TRÊN BÊN PHẢI) -->
     <header>
         <div class="brand-left">
             <a href="#" class="brand-title">MÁY TÍNH <span>TIẾN HẠNH</span></a>
             <span class="brand-sub">CS1: Hà Nội · CS2: Thiệu Hóa, Thanh Hóa</span>
         </div>
 
-        <div class="header-right">
-            <ul class="nav-links">
-                <li><a href="#danhmuc">Danh mục</a></li>
-                <li><a href="#sanpham">Sản phẩm</a></li>
-                <li><a href="#camket">Cam kết</a></li>
-                <li><a href="#khachhang">Khách hàng</a></li>
-                <li><a href="#gioithieu">Giới thiệu</a></li>
-                <li><a href="#lienhe">Liên hệ</a></li>
-                <li><a href="tel:0988373446" class="nav-cta">Gọi 0988 373 446</a></li>
-            </ul>
-
-            <!-- LOGO HLT GÓC TRÊN BÊN PHẢI: Thay chữ HLT bên trong .hlt-mark bằng <img src="LINK_LOGO_HLT"> nếu có ảnh logo -->
-            <a href="#" class="hlt-top-logo" title="HLT HaLin Tech">
-                <div class="hlt-mark">HLT</div>
-                <div class="hlt-label">HLT<small>HALIN TECH</small></div>
-            </a>
-        </div>
+        <ul class="nav-links">
+            <li><a href="#danhmuc">Danh mục</a></li>
+            <li><a href="#sanpham">Sản phẩm</a></li>
+            <li><a href="#camket">Cam kết</a></li>
+            <li><a href="#khachhang">Khách hàng</a></li>
+            <li><a href="#gioithieu">Giới thiệu</a></li>
+            <li><a href="#lienhe">Liên hệ</a></li>
+            <li><a href="https://zalo.me/0988373446" target="_blank" class="nav-cta">Zalo 0988373446</a></li>
+        </ul>
     </header>
 
     <!-- 3. HERO SECTION -->
@@ -225,10 +227,20 @@
             <div class="hero-pill">UY TÍN · GIÁ RẺ · CHẤT LƯỢNG</div>
             <h1>Máy Tính <span>Tiến Hạnh</span><br>PC Gaming · Laptop ·<br>Linh kiện</h1>
             <p>Chuyên cung cấp máy tính gaming, máy văn phòng, workstation Xeon, laptop, màn hình và linh kiện. Tư vấn đúng nhu cầu, đúng ngân sách – máy chính hãng, bảo hành rõ ràng, cài đặt sẵn và bàn giao tận tay.</p>
+
             <div class="hero-btns">
                 <a href="#sanpham" class="btn-sky">Xem cấu hình đang bán</a>
                 <a href="https://zalo.me/0988373446" target="_blank" class="btn-sky-outline">Tư vấn qua Zalo</a>
             </div>
+
+            <!-- LƯỢT THEO DÕI FACEBOOK NGAY DƯỚI NÚT XEM CẤU HÌNH ĐANG BÁN -->
+            <div class="fb-follow-row">
+                <a href="https://www.facebook.com/tienhanh.halintech/" target="_blank" class="fb-follow-link">
+                    <span>👍 Lượt theo dõi Facebook:</span>
+                    <strong>Máy Tính Tiến Hạnh - HaLin Tech →</strong>
+                </a>
+            </div>
+
             <div class="hero-stats">
                 <div>
                     <div class="stat-num">2 Cơ sở</div>
@@ -247,17 +259,18 @@
 
         <div class="hero-visual">
             <div class="hero-img-box">
-                <!-- THAY ẢNH HERO CHÍNH TẠI ĐÂY -->
-                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=80" alt="Bộ PC Gaming HaLin Tech">
+                <!-- [ẢNH ĐẦU TRANG]: Thay link ảnh đầu trang vào src="..." bên dưới -->
+                <img id="anh-dau-trang" src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=80" alt="Ảnh đầu trang - Bộ PC HaLin Tech">
             </div>
             <div class="floating-price-card">
                 <small>Thanh lý PC cấu hình cao chỉ từ</small>
+                <!-- [GIÁ NỔI ĐẦU TRANG]: Sửa giá tại đây -->
                 <strong>5.600.000đ</strong>
             </div>
         </div>
     </section>
 
-    <!-- 4. DANH MỤC (TÔNG XANH NHẠT - 8 Ô) -->
+    <!-- 4. DANH MỤC -->
     <section class="sec-sky-tint" id="danhmuc">
         <div class="sec-header">
             <span class="sec-tag">Danh mục</span>
@@ -307,21 +320,22 @@
         </div>
     </section>
 
-    <!-- 5. CẤU HÌNH NỔI BẬT (TÔNG XANH ĐẬM - 6 THẺ) -->
+    <!-- 5. CẤU HÌNH NỔI BẬT -->
     <section class="sec-navy" id="sanpham">
         <div class="sec-header">
             <span class="sec-tag">Cấu hình nổi bật</span>
             <h2 class="sec-title">PC thanh lý – xả kho giá tốt</h2>
-            <p class="sec-sub">Giá và tình trạng hàng có thể thay đổi, vui lòng gọi hoặc nhắn Zalo <strong style="color:#38bdf8">0988 373 446</strong> để chốt máy.</p>
+            <p class="sec-sub">Giá và tình trạng hàng có thể thay đổi, bấm đặt mua để vào thẳng Zalo <strong style="color:#38bdf8">0988373446</strong> chốt máy.</p>
         </div>
 
         <div class="prod-grid">
+            <!-- ẢNH 1: PC XEON -->
             <div class="prod-card">
                 <span class="prod-badge">Chỉ 20 bộ</span>
                 <div>
                     <div class="prod-img">
-                        <!-- THAY ẢNH MÁY 1 -->
-                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=700&q=80" alt="PC Xeon E5-2676 V3">
+                        <!-- [ẢNH 1 - PC XEON]: Thay link ảnh tại đây -->
+                        <img id="anh-1-pc-xeon" src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=700&q=80" alt="Ảnh 1 - PC Xeon">
                     </div>
                     <div class="prod-body">
                         <div class="prod-title">PC Xeon 12 nhân 24 luồng – RAM 32GB</div>
@@ -335,16 +349,18 @@
                     </div>
                 </div>
                 <div class="prod-footer">
+                    <!-- [GIÁ 1 - PC XEON]: Sửa giá tại đây -->
                     <div class="prod-price">5.600.000đ</div>
                     <a href="https://zalo.me/0988373446" target="_blank" class="btn-buy">Đặt mua</a>
                 </div>
             </div>
 
+            <!-- ẢNH 2: PC I5 13400F -->
             <div class="prod-card">
                 <div>
                     <div class="prod-img">
-                        <!-- THAY ẢNH MÁY 2 -->
-                        <img src="https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?auto=format&fit=crop&w=700&q=80" alt="PC i5-13400F">
+                        <!-- [ẢNH 2 - PC I5 13400F]: Thay link ảnh tại đây -->
+                        <img id="anh-2-pc-i5-13400f" src="https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?auto=format&fit=crop&w=700&q=80" alt="Ảnh 2 - PC i5 13400F">
                     </div>
                     <div class="prod-body">
                         <div class="prod-title">PC i5-13400F – GTX 1650 4GB</div>
@@ -358,16 +374,18 @@
                     </div>
                 </div>
                 <div class="prod-footer">
+                    <!-- [GIÁ 2 - PC I5 13400F]: Sửa giá tại đây -->
                     <div class="prod-price">10.600.000đ</div>
                     <a href="https://zalo.me/0988373446" target="_blank" class="btn-buy">Đặt mua</a>
                 </div>
             </div>
 
+            <!-- ẢNH 3: PC I5 12400F -->
             <div class="prod-card">
                 <div>
                     <div class="prod-img">
-                        <!-- THAY ẢNH MÁY 3 -->
-                        <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=700&q=80" alt="PC i5-12400F">
+                        <!-- [ẢNH 3 - PC I5 12400F]: Thay link ảnh tại đây -->
+                        <img id="anh-3-pc-i5-12400f" src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=700&q=80" alt="Ảnh 3 - PC i5 12400F">
                     </div>
                     <div class="prod-body">
                         <div class="prod-title">PC i5-12400F – RTX 2060 6GB</div>
@@ -381,16 +399,18 @@
                     </div>
                 </div>
                 <div class="prod-footer">
+                    <!-- [GIÁ 3 - PC I5 12400F]: Sửa giá tại đây -->
                     <div class="prod-price">11.900.000đ</div>
                     <a href="https://zalo.me/0988373446" target="_blank" class="btn-buy">Đặt mua</a>
                 </div>
             </div>
 
+            <!-- ẢNH 4: PC I5 14400F GTX 1660 -->
             <div class="prod-card featured">
                 <div>
                     <div class="prod-img">
-                        <!-- THAY ẢNH MÁY 4 -->
-                        <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=700&q=80" alt="PC i5-14400F GTX 1660">
+                        <!-- [ẢNH 4 - PC I5 14400F GTX 1660]: Thay link ảnh tại đây -->
+                        <img id="anh-4-pc-i5-14400f-gtx1660" src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=700&q=80" alt="Ảnh 4 - PC i5 14400F GTX 1660">
                     </div>
                     <div class="prod-body">
                         <div class="prod-title">PC i5-14400F – GTX 1660 6GB</div>
@@ -404,17 +424,19 @@
                     </div>
                 </div>
                 <div class="prod-footer">
+                    <!-- [GIÁ 4 - PC I5 14400F GTX 1660]: Sửa giá tại đây -->
                     <div class="prod-price">12.400.000đ</div>
                     <a href="https://zalo.me/0988373446" target="_blank" class="btn-buy">Đặt mua</a>
                 </div>
             </div>
 
+            <!-- ẢNH 5: PC I5 14400F RTX 2060 -->
             <div class="prod-card">
                 <span class="prod-badge">Mạnh nhất</span>
                 <div>
                     <div class="prod-img">
-                        <!-- THAY ẢNH MÁY 5 -->
-                        <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=700&q=80" alt="PC i5-14400F RTX 2060">
+                        <!-- [ẢNH 5 - PC I5 14400F RTX 2060]: Thay link ảnh tại đây -->
+                        <img id="anh-5-pc-i5-14400f-rtx2060" src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=700&q=80" alt="Ảnh 5 - PC i5 14400F RTX 2060">
                     </div>
                     <div class="prod-body">
                         <div class="prod-title">PC i5-14400F – RTX 2060 6GB</div>
@@ -428,21 +450,25 @@
                     </div>
                 </div>
                 <div class="prod-footer">
+                    <!-- [GIÁ 5 - PC I5 14400F RTX 2060]: Sửa giá tại đây -->
                     <div class="prod-price">13.500.000đ</div>
                     <a href="https://zalo.me/0988373446" target="_blank" class="btn-buy">Đặt mua</a>
                 </div>
             </div>
 
+            <!-- ẢNH 6: MÀN HÌNH -->
             <div class="prod-card">
                 <div>
                     <div class="prod-img">
-                        <!-- THAY ẢNH MÀN HÌNH -->
-                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=700&q=80" alt="Màn hình Full viền">
+                        <!-- [ẢNH 6 - MÀN HÌNH]: Thay link ảnh màn hình tại đây -->
+                        <img id="anh-6-man-hinh" src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=700&q=80" alt="Ảnh 6 - Màn hình">
                     </div>
                     <div class="prod-body">
                         <div class="prod-title">Màn hình full viền 24" – 27"</div>
                         <ul class="spec-list">
+                            <!-- [GIÁ 6A - MÀN 24 INCH]: Sửa giá tại đây -->
                             <li>24 inch full viền mới, 120Hz – <strong>1.600.000đ</strong></li>
+                            <!-- [GIÁ 6B - MÀN 27 INCH]: Sửa giá tại đây -->
                             <li>27 inch full viền 100Hz – <strong>1.700.000đ</strong></li>
                             <li>Bảo hành chính hãng 24 tháng</li>
                             <li>Mua kèm bộ PC để có giá ưu đãi nhất</li>
@@ -450,6 +476,7 @@
                     </div>
                 </div>
                 <div class="prod-footer">
+                    <!-- [GIÁ 6 TỔNG - MÀN HÌNH]: Sửa giá khởi điểm tại đây -->
                     <div class="prod-price">từ 1.600.000đ</div>
                     <a href="https://zalo.me/0988373446" target="_blank" class="btn-buy">Đặt mua</a>
                 </div>
@@ -471,7 +498,7 @@
         </div>
     </section>
 
-    <!-- 6. CAM KẾT (TÔNG XANH NHẠT - 6 Ô) -->
+    <!-- 6. CAM KẾT -->
     <section class="sec-sky-tint" id="camket">
         <div class="sec-header">
             <span class="sec-tag">Cam kết</span>
@@ -511,7 +538,7 @@
         </div>
     </section>
 
-    <!-- 7. ĐƠN HÀNG BÀN GIAO MỖI NGÀY (TÔNG XANH ĐẬM) -->
+    <!-- 7. HÌNH ẢNH THỰC TẾ -->
     <section class="sec-navy" id="khachhang">
         <div class="sec-header">
             <span class="sec-tag">Hình ảnh thực tế</span>
@@ -520,44 +547,44 @@
         </div>
         <div class="gallery-grid">
             <div class="gal-item">
-                <!-- THAY ẢNH THỰC TẾ 1 -->
-                <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&w=600&q=80" alt="Cơ sở 1 Hà Nội">
+                <!-- [ẢNH THỰC TẾ 1]: Thay link ảnh tại đây -->
+                <img id="anh-thuc-te-1" src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&w=600&q=80" alt="Ảnh thực tế 1">
                 <div class="gal-caption">CS1 – 67 Nguyễn Đổng Chi, Từ Liêm, Hà Nội</div>
             </div>
             <div class="gal-item">
-                <!-- THAY ẢNH THỰC TẾ 2 -->
-                <img src="https://images.unsplash.com/photo-1593640495253-23196b27a87f?auto=format&fit=crop&w=600&q=80" alt="Giao đơn PC">
+                <!-- [ẢNH THỰC TẾ 2]: Thay link ảnh tại đây -->
+                <img id="anh-thuc-te-2" src="https://images.unsplash.com/photo-1593640495253-23196b27a87f?auto=format&fit=crop&w=600&q=80" alt="Ảnh thực tế 2">
                 <div class="gal-caption">Giao đơn dàn PC văn phòng & gaming</div>
             </div>
             <div class="gal-item">
-                <!-- THAY ẢNH THỰC TẾ 3 -->
-                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&q=80" alt="Đóng gói COD">
+                <!-- [ẢNH THỰC TẾ 3]: Thay link ảnh tại đây -->
+                <img id="anh-thuc-te-3" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&q=80" alt="Ảnh thực tế 3">
                 <div class="gal-caption">Đóng gói chống sốc kỹ lưỡng, gửi COD toàn quốc</div>
             </div>
             <div class="gal-item">
-                <!-- THAY ẢNH THỰC TẾ 4 -->
-                <img src="https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2?auto=format&fit=crop&w=600&q=80" alt="Bàn giao tận nơi">
+                <!-- [ẢNH THỰC TẾ 4]: Thay link ảnh tại đây -->
+                <img id="anh-thuc-te-4" src="https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2?auto=format&fit=crop&w=600&q=80" alt="Ảnh thực tế 4">
                 <div class="gal-caption">Lắp đặt và bàn giao tận nơi cho khách</div>
             </div>
             <div class="gal-item">
-                <!-- THAY ẢNH THỰC TẾ 5 -->
-                <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=600&q=80" alt="Cơ sở 2 Thanh Hóa">
+                <!-- [ẢNH THỰC TẾ 5]: Thay link ảnh tại đây -->
+                <img id="anh-thuc-te-5" src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=600&q=80" alt="Ảnh thực tế 5">
                 <div class="gal-caption">CS2 – Thiệu Hóa, Thanh Hóa</div>
             </div>
             <div class="gal-item">
-                <!-- THAY ẢNH THỰC TẾ 6 -->
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Đơn hàng trong ngày">
+                <!-- [ẢNH THỰC TẾ 6]: Thay link ảnh tại đây -->
+                <img id="anh-thuc-te-6" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Ảnh thực tế 6">
                 <div class="gal-caption">Đơn hàng xuất kho trong ngày</div>
             </div>
         </div>
     </section>
 
-    <!-- 8. GIỚI THIỆU (TÔNG XANH NHẠT — ẢNH BÌA NẰM GÓC TRÁI) -->
+    <!-- 8. GIỚI THIỆU -->
     <section class="sec-sky-tint" id="gioithieu">
         <div class="about-grid">
-            <!-- ẢNH BÌA BÊN GÓC TRÁI CHỖ GIỚI THIỆU: Dán link ảnh bìa HLT HALIN TECH (ảnh bạn vừa gửi) vào src="..." -->
             <div class="about-cover-left">
-                <img src="LINK_ẢNH_BÌA_HLT_HALIN_TECH_CỦA_BẠN_Ở_ĐÂY" alt="Ảnh bìa Máy Tính Tiến Hạnh - HaLin Tech">
+                <!-- [ẢNH MỤC GIỚI THIỆU]: Thay link ảnh banner / giới thiệu vào src="..." bên dưới -->
+                <img id="anh-gioi-thieu" src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80" alt="Ảnh mục giới thiệu - Máy Tính Tiến Hạnh HaLin Tech">
             </div>
 
             <div class="about-text">
@@ -566,14 +593,14 @@
                 <p><strong>Máy Tính Tiến Hạnh (HaLin Tech – Tiến Hạnh PC Gaming)</strong> chuyên cung cấp máy tính gaming, máy văn phòng, workstation Xeon, laptop, linh kiện và phụ kiện máy tính chính hãng.</p>
                 <p>Mỗi đơn hàng là một lần được khách hàng tin tưởng. Chúng tôi giữ vững ba điều: tư vấn đúng nhu cầu và ngân sách, máy chính hãng với bảo hành rõ ràng, và hỗ trợ kỹ thuật tận tâm sau bán hàng.</p>
                 <div class="about-btns">
-                    <a href="https://zalo.me/0988373446" target="_blank" class="btn-navy-solid">Facebook Máy Tính Tiến Hạnh</a>
-                    <a href="https://zalo.me/0388548689" target="_blank" class="btn-sky-border">Fanpage HaLin Tech Gaming</a>
+                    <a href="https://www.facebook.com/tienhanh.halintech/" target="_blank" class="btn-navy-solid">Facebook Máy Tính Tiến Hạnh</a>
+                    <a href="https://zalo.me/0988373446" target="_blank" class="btn-sky-border">Tư vấn Zalo: 0988373446</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 9. LIÊN HỆ & BẢN ĐỒ (TÔNG XANH ĐẬM) -->
+    <!-- 9. LIÊN HỆ & BẢN ĐỒ -->
     <section class="sec-navy" id="lienhe">
         <div class="contact-grid">
             <div>
@@ -584,7 +611,7 @@
                     <div class="c-icon">📍</div>
                     <div class="c-info">
                         <strong>Cơ sở 1 – Từ Liêm, Hà Nội</strong>
-                        <span>67 Nguyễn Đổng Chi, Từ Liêm, Hà Nội · <a href="https://maps.google.com/?q=67+Nguyễn+Đổng+Chi,+Từ+Liêm,+Hà+Nội" target="_blank">Chỉ đường</a></span>
+                        <span>67 Nguyễn Đổng Chi, Từ Liêm, Hà Nội · <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank">Mở Google Map</a></span>
                     </div>
                 </div>
 
@@ -592,7 +619,7 @@
                     <div class="c-icon">📍</div>
                     <div class="c-info">
                         <strong>Cơ sở 2 – Thiệu Hóa, Thanh Hóa</strong>
-                        <span>Thiệu Hóa, Thanh Hóa · <a href="https://maps.google.com/?q=Thiệu+Hóa,+Thanh+Hóa" target="_blank">Chỉ đường</a></span>
+                        <span>Thiệu Hóa, Thanh Hóa · <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank">Mở Google Map</a></span>
                     </div>
                 </div>
 
@@ -600,7 +627,7 @@
                     <div class="c-icon">📞</div>
                     <div class="c-info">
                         <strong>Hotline / Zalo</strong>
-                        <span><a href="tel:0988373446">0988 373 446</a> · <a href="tel:0388548689">0388 548 689</a></span>
+                        <span><a href="https://zalo.me/0988373446" target="_blank">0988 373 446</a> · <a href="tel:0388548689">0388 548 689</a></span>
                     </div>
                 </div>
 
@@ -613,13 +640,22 @@
                 </div>
 
                 <div class="contact-actions">
-                    <a href="tel:0988373446" class="btn-sky">Gọi ngay</a>
-                    <a href="https://zalo.me/0988373446" target="_blank" class="btn-sky-outline">Chat Zalo</a>
+                    <a href="https://zalo.me/0988373446" target="_blank" class="btn-sky">Tư vấn Zalo 0988373446</a>
+                    <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank" class="btn-sky-outline">Xem bản đồ Map</a>
                 </div>
             </div>
 
-            <div class="map-frame">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.92440380285!2d105.7634!3d21.0357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b991d80fd5%3A0x53cefc99d6b0bf6f!2zNjcgUGjhu5EgTmd1eeG7mW4gxJDhu5VuZyBDaGksIEPhuqd1IERp4buFbiwgTmFtIFThu6sgTGnDqm0sIEjDoCBO4buZaQ!5e0!3m2!1svi!2svn!4v1700000000000!5m2!1svi!2svn" allowfullscreen="" loading="lazy"></iframe>
+            <div class="map-card-box">
+                <div>
+                    <span class="sec-tag" style="color:var(--sky-bright);">Bản đồ định vị</span>
+                    <h3>Vị trí Máy Tính Tiến Hạnh - HaLin Tech</h3>
+                    <p>Bấm nút bên dưới để mở trực tiếp tọa độ ghim trên ứng dụng hoặc trình duyệt Google Maps và dẫn đường tới cửa hàng nhanh nhất.</p>
+                    <div class="map-pin-preview">
+                        <strong>📌 Link Map đã ghim:</strong><br>
+                        <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank" style="color:#38bdf8; word-break:break-all;">https://maps.app.goo.gl/2tbULeYiQkxuSb3p8</a>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank" class="btn-sky">Mở Google Maps chỉ đường</a>
             </div>
         </div>
     </section>
@@ -627,16 +663,16 @@
     <!-- 10. FOOTER -->
     <footer>
         <div>
-            <div class="f-brand">MÁY TÍNH TIẾN HẠNH <span class="f-badge">HLT</span></div>
+            <div class="f-brand">MÁY TÍNH TIẾN HẠNH <span class="f-badge">PC</span></div>
             <div style="margin-top:4px; font-size:12px;">HaLin Tech · CS1: 67 Nguyễn Đổng Chi, Từ Liêm, Hà Nội | CS2: Thiệu Hóa, Thanh Hóa</div>
         </div>
-        <div>© 2026 Máy Tính Tiến Hạnh. Hotline/Zalo: <strong style="color:#38bdf8">0988 373 446</strong></div>
+        <div>© 2026 Máy Tính Tiến Hạnh. Zalo/Hotline: <a href="https://zalo.me/0988373446" target="_blank" style="color:#38bdf8; font-weight:700;">0988 373 446</a></div>
     </footer>
 
     <!-- FLOATING BUTTONS -->
     <div class="float-wrap">
-        <a href="https://zalo.me/0988373446" target="_blank" class="f-btn f-zalo" title="Chat Zalo">Zalo</a>
-        <a href="tel:0988373446" class="f-btn f-call" title="Gọi ngay">📞</a>
+        <a href="https://zalo.me/0988373446" target="_blank" class="f-btn f-zalo" title="Chat Zalo 0988373446">Zalo</a>
+        <a href="tel:0988373446" class="f-btn f-call" title="Gọi 0988373446">📞</a>
     </div>
 
 </body>
