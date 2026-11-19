@@ -689,8 +689,8 @@
                     :root {
                         --map-height-pc: 360px;     /* Đổi chiều cao khung bản đồ trên máy tính */
                         --map-height-mb: 260px;     /* Đổi chiều cao khung bản đồ trên điện thoại */
-                        --map-scale-x: 1.85;        /* Tăng/giảm để phóng to theo chiều ngang */
-                        --map-scale-y: 2.05;        /* Tăng/giảm để phóng to theo chiều dọc */
+                        --map-scale-x: 2.3;         /* RỘNG RA: tăng số này nếu chưa tràn hết sang phải */
+                        --map-scale-y: 3.1;         /* DÀI RA: tăng số này nếu chưa tràn hết xuống dưới */
                     }
                     .halin-map-full {
                         position: relative;
@@ -708,8 +708,8 @@
                         position: absolute !important;
                         top: 0 !important;
                         left: 0 !important;
-                        width: 56.5% !important;
-                        height: 50% !important;
+                        width: 60% !important;
+                        height: 55% !important;
                         max-width: none !important;
                         max-height: none !important;
                         transform: scale(var(--map-scale-x), var(--map-scale-y)) !important;
@@ -741,7 +741,7 @@
                 </style>
             </div>
         </div>
-    </section> 
+    </section>
 
     <!-- 10. FOOTER -->
     <footer>
