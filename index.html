@@ -3,115 +3,933 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Máy Tính Tiến Hạnh - HaLin Tech | PC Gaming, Workstation & Linh Kiện</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Máy Tính Tiến Hạnh - HaLin Tech | Build PC Gaming, Đồ Họa & Sửa Chữa Uy Tín</title>
+    <meta name="description" content="Máy Tính Tiến Hạnh - HaLin Tech chuyên cung cấp linh kiện máy tính, build PC Gaming, PC Workstation Xeon, sửa chữa nâng cấp tại Hà Nội và Thanh Hóa.">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: #121212; color: #e0e0e0; line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
-        
-        /* Top bar */
-        .top-bar { background: #0a0a0a; color: #aaa; font-size: 13px; padding: 8px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; flex-wrap: wrap; gap: 10px; }
-        .top-bar span { display: flex; align-items: center; gap: 6px; }
-        .top-bar a { color: #ff4d4d; font-weight: 600; }
+        :root {
+            --bg-dark: #050d1a;
+            --bg-navy: #09162b;
+            --bg-card: #0e203d;
+            --bg-card-hover: #13294d;
+            --blue-primary: #0ea5e9;
+            --blue-bright: #38bdf8;
+            --blue-glow: rgba(56, 189, 248, 0.25);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-blue: rgba(56, 189, 248, 0.22);
+        }
 
-        /* Navbar */
-        header { background: #181818; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #282828; }
-        .logo { display: flex; align-items: center; gap: 10px; }
-        .logo-box { background: #e50914; color: #fff; font-weight: 800; padding: 6px 12px; border-radius: 6px; font-size: 18px; letter-spacing: 1px; }
-        .logo-text { font-weight: 700; font-size: 16px; color: #fff; }
-        .nav-links { display: flex; gap: 25px; list-style: none; align-items: center; }
-        .nav-links a { font-size: 14px; font-weight: 500; color: #ccc; transition: 0.3s; }
-        .nav-links a:hover { color: #ff4d4d; }
-        .nav-cta { background: #e50914 !important; color: white !important; padding: 8px 16px; border-radius: 6px; font-weight: 600; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        /* Hero Section */
-        .hero { padding: 60px 5%; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; background: radial-gradient(circle at 10% 20%, #220808 0%, #121212 60%); }
-        .badge { display: inline-block; background: rgba(229, 9, 20, 0.15); color: #ff4d4d; border: 1px solid rgba(229, 9, 20, 0.3); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 20px; }
-        .hero h1 { font-size: 42px; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 20px; }
-        .hero h1 span { color: #ff4d4d; }
-        .hero p { font-size: 15px; color: #aaa; margin-bottom: 30px; }
-        .hero-btns { display: flex; gap: 15px; margin-bottom: 40px; }
-        .btn-primary { background: #e50914; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; transition: 0.3s; }
-        .btn-primary:hover { background: #c50710; }
-        .btn-outline { border: 1px solid #444; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; transition: 0.3s; }
-        .btn-outline:hover { border-color: #ff4d4d; color: #ff4d4d; }
-        .hero-stats { display: flex; gap: 40px; border-top: 1px solid #222; padding-top: 25px; }
-        .stat-num { font-size: 22px; font-weight: 700; color: #fff; }
-        .stat-desc { font-size: 13px; color: #888; }
-        .hero-card { background: #1a1a1a; border: 1px solid #333; border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .hero-card img { width: 100%; border-radius: 10px; display: block; margin-bottom: 15px; }
-        .hero-card-price { background: #fff; color: #121212; padding: 15px; border-radius: 10px; font-weight: 700; font-size: 18px; display: flex; justify-content: space-between; align-items: center; }
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+        }
 
-        /* Section Titles */
-        .section-title { text-align: center; padding: 60px 0 40px; }
-        .section-title span { color: #ff4d4d; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
-        .section-title h2 { font-size: 32px; font-weight: 800; color: #fff; margin-top: 8px; }
+        body {
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-        /* Categories Grid */
-        .categories { padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-        .cat-card { background: #181818; border: 1px solid #262626; border-radius: 12px; padding: 25px; transition: 0.3s; }
-        .cat-card:hover { border-color: #ff4d4d; transform: translateY(-5px); }
-        .cat-card h3 { font-size: 18px; color: #fff; margin-bottom: 8px; }
-        .cat-card p { font-size: 13px; color: #999; }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-        /* Products Grid */
-        .products { padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .prod-card { background: #1a1a1a; border: 1px solid #282828; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
-        .prod-img { width: 100%; height: 200px; object-fit: cover; background: #222; }
-        .prod-body { padding: 20px; }
-        .prod-title { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 15px; }
-        .spec-list { list-style: none; font-size: 13px; color: #aaa; margin-bottom: 20px; }
-        .spec-list li { margin-bottom: 6px; position: relative; padding-left: 15px; }
-        .spec-list li::before { content: "•"; color: #ff4d4d; position: absolute; left: 0; }
-        .prod-footer { padding: 15px 20px; background: #151515; border-top: 1px solid #252525; display: flex; justify-content: space-between; align-items: center; }
-        .price { font-size: 20px; font-weight: 800; color: #ff4d4d; }
-        .btn-buy { background: #e50914; color: white; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; }
+        /* HEADER / NAVBAR */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 13, 26, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-blue);
+        }
 
-        /* Why Choose Us */
-        .features { padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-        .feature-card { background: #181818; border: 1px solid #262626; padding: 30px; border-radius: 12px; }
-        .feature-num { font-size: 28px; font-weight: 800; color: #333; margin-bottom: 10px; }
-        .feature-card h3 { color: #fff; font-size: 16px; margin-bottom: 6px; }
-        .feature-card p { font-size: 13px; color: #999; }
+        .nav-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
 
-        /* Contact Section */
-        .contact-section { padding: 60px 5%; background: #151515; margin-top: 60px; border-top: 1px solid #222; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .contact-info h2 { font-size: 28px; color: #fff; margin-bottom: 20px; }
-        .info-item { margin-bottom: 15px; font-size: 14px; color: #ccc; }
-        .info-item strong { color: #fff; display: block; margin-bottom: 3px; }
-        .map-box { width: 100%; height: 300px; background: #222; border-radius: 12px; overflow: hidden; border: 1px solid #333; }
-        .map-box iframe { width: 100%; height: 100%; border: 0; }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: 0.4px;
+            color: #ffffff;
+        }
 
-        /* Floating buttons */
-        .float-btns { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
-        .float-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .zalo-btn { background: #0068ff; }
-        .phone-btn { background: #e50914; }
+        .brand-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            background: linear-gradient(135deg, #0284c7, #38bdf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 14px;
+            color: #041022;
+            box-shadow: 0 0 16px var(--blue-glow);
+        }
 
-        /* Footer */
-        footer { background: #0d0d0d; padding: 30px 5%; text-align: center; font-size: 13px; color: #777; border-top: 1px solid #222; }
+        .brand span.sub {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--blue-bright);
+            letter-spacing: 0.8px;
+        }
 
-        @media (max-width: 768px) {
-            .hero, .contact-section { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-            .hero h1 { font-size: 30px; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover {
+            color: var(--blue-bright);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #0284c7, #0ea5e9);
+            color: #ffffff !important;
+            padding: 9px 18px;
+            border-radius: 999px;
+            font-size: 13.5px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px var(--blue-glow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: radial-gradient(circle at 75% 25%, rgba(14, 165, 233, 0.16), transparent 55%),
+                        linear-gradient(180deg, #071326 0%, var(--bg-dark) 100%);
+            padding: 72px 20px 64px;
+            border-bottom: 1px solid var(--border-blue);
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.25fr 0.95fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            color: var(--blue-bright);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 999px;
+            margin-bottom: 16px;
+            letter-spacing: 0.6px;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            line-height: 1.22;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            color: var(--blue-bright);
+        }
+
+        .hero p {
+            font-size: 15.5px;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            max-width: 560px;
+        }
+
+        .hero-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0284c7, #38bdf8);
+            color: #041022;
+            font-weight: 800;
+            padding: 13px 26px;
+            border-radius: 10px;
+            font-size: 15px;
+            box-shadow: 0 8px 24px var(--blue-glow);
+            transition: transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: rgba(14, 32, 61, 0.7);
+            border: 1px solid rgba(56, 189, 248, 0.45);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 13px 24px;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            background: rgba(56, 189, 248, 0.14);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-blue);
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 20px;
+            color: var(--blue-bright);
+            font-weight: 800;
+        }
+
+        .stat-item span {
+            font-size: 12.5px;
+            color: var(--text-muted);
+        }
+
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 18px;
+            padding: 26px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero-card h3 {
+            font-size: 17px;
+            color: var(--blue-bright);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .badge-hot {
+            background: #0284c7;
+            color: #fff;
+            font-size: 11px;
+            padding: 3px 9px;
+            border-radius: 6px;
+        }
+
+        .spec-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 13.5px;
+            margin-bottom: 20px;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed rgba(148, 163, 184, 0.2);
+        }
+
+        .spec-list li span:first-child {
+            color: var(--text-muted);
+        }
+
+        .spec-list li span:last-child {
+            font-weight: 600;
+            color: #ffffff;
+            text-align: right;
+        }
+
+        /* SECTIONS COMMON */
+        section {
+            padding: 64px 20px;
+        }
+
+        .sec-navy {
+            background-color: var(--bg-navy);
+            border-top: 1px solid var(--border-blue);
+            border-bottom: 1px solid var(--border-blue);
+        }
+
+        .sec-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sec-head {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 42px;
+        }
+
+        .sec-label {
+            color: var(--blue-bright);
+            font-size: 12.5px;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .sec-head h2 {
+            font-size: 30px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .sec-head p {
+            color: var(--text-muted);
+            font-size: 14.5px;
+        }
+
+        /* PC BUILDS GRID */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .pc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-blue);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.25s, border-color 0.25s, background 0.25s;
+        }
+
+        .pc-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--blue-bright);
+            background: var(--bg-card-hover);
+        }
+
+        .pc-card.featured {
+            border: 1.5px solid var(--blue-bright);
+            box-shadow: 0 12px 32px rgba(14, 165, 233, 0.18);
+        }
+
+        .pc-tag {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--blue-bright);
+            background: rgba(56, 189, 248, 0.12);
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .pc-card h3 {
+            font-size: 19px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        .pc-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--blue-bright);
+            margin-bottom: 16px;
+        }
+
+        .pc-specs {
+            list-style: none;
+            font-size: 13.5px;
+            color: #cbd5e1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+
+        .pc-specs li::before {
+            content: "▹ ";
+            color: var(--blue-bright);
+            font-weight: bold;
+        }
+
+        .pc-btn {
+            display: block;
+            text-align: center;
+            background: rgba(56, 189, 248, 0.14);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: var(--blue-bright);
+            font-weight: 700;
+            padding: 11px;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .pc-card.featured .pc-btn,
+        .pc-btn:hover {
+            background: var(--blue-primary);
+            color: #ffffff;
+            border-color: var(--blue-primary);
+        }
+
+        /* SERVICES GRID */
+        .srv-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .srv-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-blue);
+            border-radius: 14px;
+            padding: 22px;
+        }
+
+        .srv-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(56, 189, 248, 0.14);
+            color: var(--blue-bright);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+
+        .srv-box h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .srv-box p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+        }
+
+        /* CONTACT & MAP SECTION */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 22px;
+            color: #ffffff;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 26px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-blue);
+        }
+
+        .info-ico {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .info-text strong {
+            display: block;
+            font-size: 14.5px;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .info-text span {
+            font-size: 13.5px;
+            color: var(--text-muted);
+        }
+
+        .info-text a {
+            color: var(--blue-bright);
+            font-weight: 700;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* MAP CONTAINER - FULL 100% KHUNG */
+        .halin-map-full {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            background: #09182e;
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .halin-map-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .halin-map-btn {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 10;
+            background: #ffffff;
+            color: #0284c7;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 7px 13px;
+            border-radius: 7px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.28);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .halin-map-btn:hover {
+            background: #f0f9ff;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #030811;
+            border-top: 1px solid var(--border-blue);
+            padding: 26px 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .f-brand {
+            font-weight: 800;
+            color: #ffffff;
+            font-size: 15px;
+        }
+
+        .f-badge {
+            background: var(--blue-primary);
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+
+        /* FLOATING BUTTONS */
+        .float-wrap {
+            position: fixed;
+            right: 18px;
+            bottom: 20px;
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .f-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 13px;
+            color: #ffffff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .f-btn:hover {
+            transform: scale(1.08);
+        }
+
+        .f-zalo {
+            background: #0068ff;
+        }
+
+        .f-call {
+            background: #0ea5e9;
+            font-size: 19px;
+        }
+
+        /* RESPONSIVE MOBILE */
+        @media (max-width: 920px) {
+            .hero-inner,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .srv-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 46px 16px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .grid-3,
+            .srv-grid {
+                grid-template-columns: 1fr;
+            }
+            .halin-map-full {
+                height: 270px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- 1. HEADER -->
+    <header>
+        <div class="nav-wrap">
+            <a href="#" class="brand">
+                <div class="brand-logo">HLT</div>
+                <div>
+                    MÁY TÍNH TIẾN HẠNH
+                    <span class="sub">HALIN TECH · PC & WORKSTATION</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="#cauhinh">Cấu hình PC</a>
+                <a href="#dichvu">Dịch vụ</a>
+                <a href="#lienhe">Cơ sở & Liên hệ</a>
+            </nav>
+            <a href="https://zalo.me/0988373446" target="_blank" rel="noopener noreferrer" class="nav-cta">
+                Tư vấn Zalo 24/7
+            </a>
+        </div>
+    </header>
 
-    <!-- Floating Buttons -->
-    <div class="float-btns">
-        <a href="https://zalo.me/0988373446" target="_blank" class="float-btn zalo-btn" title="Chat Zalo">Zalo</a>
-        <a href="tel:0988373446" class="float-btn phone-btn" title="Gọi ngay">📞</a>
-    </div>
+    <!-- 2. HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <span class="hero-tag">CYBER BLUE EDITION · HÀ NỘI & THANH HÓA</span>
+                <h1>Build PC Gaming, Đồ Họa & <span>Workstation Đa Nhân</span> Tối Ưu Chi Phí</h1>
+                <p>Chuyên tư vấn lắp ráp PC theo ngân sách, dàn máy chạy giả lập/tool đa luồng Xeon E5, nâng cấp linh kiện và sửa chữa tận tâm tại Hà Nội & Thanh Hóa.</p>
+                <div class="hero-btns">
+                    <a href="https://zalo.me/0988373446" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        Nhận báo giá qua Zalo
+                    </a>
+                    <a href="#cauhinh" class="btn-outline">
+                        Xem cấu hình gợi ý
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <strong>2 Cơ sở</strong>
+                        <span>Hà Nội & Thanh Hóa</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>Bảo hành</strong>
+                        <span>1 đổi 1 nhanh gọn</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>Giao lắp</strong>
+                        <span>Tận nơi toàn quốc</span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Footer -->
+            <div class="hero-card">
+                <h3>
+                    Cấu hình Best-Seller Đa Luồng
+                    <span class="badge-hot">X99 XEON</span>
+                </h3>
+                <ul class="spec-list">
+                    <li><span>CPU</span><span>Intel Xeon E5-2676v3 / 2678v3 (12 Nhân 24 Luồng)</span></li>
+                    <li><span>Mainboard</span><span>X99 Chuyên Dụng Hỗ Trợ NVMe & ECC</span></li>
+                    <li><span>RAM</span><span>32GB - 64GB DDR4 ECC Tự Sửa Lỗi</span></li>
+                    <li><span>Ổ cứng</span><span>SSD NVMe 512GB Tốc Độ Cao</span></li>
+                    <li><span>Card đồ họa</span><span>GTX 1660 Super / RX 580 / RTX 3060</span></li>
+                    <li><span>Nguồn & Vỏ</span><span>Nguồn Công Suất Thực + Vỏ Bể Cá LED</span></li>
+                </ul>
+                <a href="https://zalo.me/0988373446" target="_blank" rel="noopener noreferrer" class="pc-btn">
+                    Chốt cấu hình này ngay
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CẤU HÌNH PC -->
+    <section id="cauhinh">
+        <div class="sec-inner">
+            <div class="sec-head">
+                <span class="sec-label">BẢNG GIÁ THAM KHẢO</span>
+                <h2>Cấu Hình PC Tiêu Biểu Tại HaLin Tech</h2>
+                <p>Tất cả cấu hình đều có thể tùy biến linh kiện lên/xuống theo đúng nhu cầu chơi game, làm việc hay chạy đa nhiệm của bạn.</p>
+            </div>
+
+            <div class="grid-3">
+                <!-- Gói 1 -->
+                <div class="pc-card">
+                    <div>
+                        <span class="pc-tag">VĂN PHÒNG & HỌC TẬP</span>
+                        <h3>PC Office Smooth</h3>
+                        <div class="pc-price">Từ 4.500.000đ</div>
+                        <ul class="pc-specs">
+                            <li>CPU Intel Core i3 / i5 Gen 10 - 12</li>
+                            <li>Mainboard H510 / H610 bền bỉ</li>
+                            <li>RAM 8GB - 16GB DDR4 Bus cao</li>
+                            <li>SSD 256GB khởi động Win 5 giây</li>
+                            <li>Vỏ case gọn đẹp, chạy êm ái</li>
+                        </ul>
+                    </div>
+                    <a href="https://zalo.me/0988373446" target="_blank" rel="noopener noreferrer" class="pc-btn">Tư vấn cấu hình</a>
+                </div>
+
+                <!-- Gói 2 -->
+                <div class="pc-card featured">
+                    <div>
+                        <span class="pc-tag">PHỔ BIẾN NHẤT · GAMING & ĐỒ HỌA</span>
+                        <h3>PC Cyber Gaming Pro</h3>
+                        <div class="pc-price">Từ 9.800.000đ</div>
+                        <ul class="pc-specs">
+                            <li>CPU Intel Core i5-12400F / Xeon E5 v4</li>
+                            <li>RAM 16GB - 32GB Dual Channel</li>
+                            <li>VGA GTX 1660S / RTX 2060 / RTX 3060</li>
+                            <li>SSD NVMe 512GB chuẩn PCIe</li>
+                            <li>Chiến mượt GTA V, LOL, Valorant, Edit CapCut/Premiere</li>
+                        </ul>
+                    </div>
+                    <a href="https://zalo.me/0988373446" target="_blank" rel="noopener noreferrer" class="pc-btn">Đặt cấu hình này</a>
+                </div>
+
+                <!-- Gói 3 -->
+                <div class="pc-card">
+                    <div>
+                        <span class="pc-tag">WORKSTATION · GIẢ LẬP & RENDER</span>
+                        <h3>PC Xeon Multi-Thread</h3>
+                        <div class="pc-price">Từ 8.500.000đ</div>
+                        <ul class="pc-specs">
+                            <li>CPU Xeon E5-2673v3 / 2676v3 / 2680v4</li>
+                            <li>RAM 32GB - 64GB DDR4 ECC ổn định 24/7</li>
+                            <li>Tản nhiệt khí tháp đôi mát mẻ</li>
+                            <li>Nguồn công suất thực chuẩn 80 Plus</li>
+                            <li>Chuyên treo tab trình duyệt, giả lập, máy ảo</li>
+                        </ul>
+                    </div>
+                    <a href="https://zalo.me/0988373446" target="_blank" rel="noopener noreferrer" class="pc-btn">Nhận cấu hình chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. DỊCH VỤ -->
+    <section id="dichvu" class="sec-navy">
+        <div class="sec-inner">
+            <div class="sec-head">
+                <span class="sec-label">DỊCH VỤ KỸ THUẬT</span>
+                <h2>Hỗ Trợ Toàn Diện Phần Cứng & Phần Mềm</h2>
+            </div>
+
+            <div class="srv-grid">
+                <div class="srv-box">
+                    <div class="srv-icon">🖥️</div>
+                    <h3>Build PC Theo Yêu Cầu</h3>
+                    <p>Tối ưu từng đồng ngân sách, test hiệu năng và nhiệt độ kỹ lưỡng trước khi bàn giao.</p>
+                </div>
+                <div class="srv-box">
+                    <div class="srv-icon">⚡</div>
+                    <h3>Nâng Cấp Linh Kiện</h3>
+                    <p>Thu cũ đổi mới CPU, RAM, VGA, SSD giúp máy chạy nhanh gấp nhiều lần với chi phí tiết kiệm.</p>
+                </div>
+                <div class="srv-box">
+                    <div class="srv-icon">🛠️</div>
+                    <h3>Sửa Chữa & Vệ Sinh PC</h3>
+                    <p>Khắc phục lỗi phần cứng, tra keo tản nhiệt cao cấp, đi lại dây gọn gàng thẩm mỹ.</p>
+                </div>
+                <div class="srv-box">
+                    <div class="srv-icon">💿</div>
+                    <h3>Cài Windows & Tối Ưu</h3>
+                    <p>Cài đặt Windows sạch, tối ưu RAM/CPU cho gaming, đồ họa và chạy phần mềm chuyên dụng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. LIÊN HỆ & BẢN ĐỒ -->
+    <section id="lienhe">
+        <div class="sec-inner">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="sec-label">LIÊN HỆ</span>
+                    <h2>Ghé cửa hàng hoặc nhắn Zalo để được tư vấn nhanh nhất</h2>
+
+                    <div class="info-list">
+                        <div class="info-row">
+                            <div class="info-ico">📍</div>
+                            <div class="info-text">
+                                <strong>Cơ sở 1 – Từ Liêm, Hà Nội</strong>
+                                <span>67 Phố Nguyễn Đổng Chi, Từ Liêm, Hà Nội · <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank" rel="noopener noreferrer">Chỉ đường</a></span>
+                            </div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-ico">📍</div>
+                            <div class="info-text">
+                                <strong>Cơ sở 2 – Thiệu Hóa, Thanh Hóa</strong>
+                                <span>Thiệu Hóa, Thanh Hóa · <a href="https://www.google.com/maps/search/?api=1&query=Thi%E1%BB%87u+H%C3%B3a,+Thanh+H%C3%B3a" target="_blank" rel="noopener noreferrer">Chỉ đường</a></span>
+                            </div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-ico">📞</div>
+                            <div class="info-text">
+                                <strong>Hotline / Zalo</strong>
+                                <span><a href="tel:0988373446">0988 373 446</a> · <a href="tel:0388548689">0388 548 689</a></span>
+                            </div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-ico">🕒</div>
+                            <div class="info-text">
+                                <strong>Giờ làm việc</strong>
+                                <span>Mở cửa tất cả các ngày trong tuần (8:00 – 21:30)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-actions">
+                        <a href="tel:0988373446" class="btn-primary">Gọi ngay</a>
+                        <a href="https://zalo.me/0988373446" target="_blank" rel="noopener noreferrer" class="btn-outline">Chat Zalo</a>
+                    </div>
+                </div>
+
+                <!-- BẢN ĐỒ CS1 FULL 100% KHUNG -->
+                <div class="halin-map-full">
+                    <a href="https://maps.app.goo.gl/2tbULeYiQkxuSb3p8" target="_blank" rel="noopener noreferrer" class="halin-map-btn" title="Mở vị trí Cơ sở 1 trên Google Maps">
+                        Mở trong Maps ↗
+                    </a>
+                    <iframe
+                        id="iframe-ban-do-cs1"
+                        class="halin-map-frame"
+                        src="https://www.google.com/maps?q=67+Nguy%E1%BB%85n+%C4%90%E1%BB%95ng+Chi,+C%E1%BA%A7u+Di%E1%BB%85n,+Nam+T%E1%BB%AB+Li%C3%AAm,+H%C3%A0+N%E1%BB%99i&output=embed"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Bản đồ Cơ sở 1 - 67 Nguyễn Đổng Chi, Hà Nội">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
     <footer>
-        <p>© 2026 Máy Tính Tiến Hạnh - HaLin Tech. Hotline/Zalo: 0988 373 446</p>
+        <div class="footer-inner">
+            <div>
+                <div class="f-brand">HALIN TECH <span class="f-badge">PC</span></div>
+                <div style="margin-top:4px; font-size:12px;">Máy Tính Tiến Hạnh · CS1: 67 Nguyễn Đổng Chi, Từ Liêm, Hà Nội | CS2: Thiệu Hóa, Thanh Hóa</div>
+            </div>
+            <div>© 2026 HaLin Tech - Máy Tính Tiến Hạnh. Zalo/Hotline: <a href="https://zalo.me/0988373446" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:700;">0988 373 446</a></div>
+        </div>
     </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <div class="float-wrap">
+        <a href="https://zalo.me/0988373446" target="_blank" rel="noopener noreferrer" class="f-btn f-zalo" title="Chat Zalo 0988373446">Zalo</a>
+        <a href="tel:0988373446" class="f-btn f-call" title="Gọi 0988373446">📞</a>
+    </div>
 
 </body>
 </html>
