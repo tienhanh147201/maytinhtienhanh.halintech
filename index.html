@@ -1,1 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính Tiến Hạnh - HaLin Tech | PC Gaming, Workstation & Linh Kiện</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #121212; color: #e0e0e0; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Top bar */
+        .top-bar { background: #0a0a0a; color: #aaa; font-size: 13px; padding: 8px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; flex-wrap: wrap; gap: 10px; }
+        .top-bar span { display: flex; align-items: center; gap: 6px; }
+        .top-bar a { color: #ff4d4d; font-weight: 600; }
 
+        /* Navbar */
+        header { background: #181818; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #282828; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo-box { background: #e50914; color: #fff; font-weight: 800; padding: 6px 12px; border-radius: 6px; font-size: 18px; letter-spacing: 1px; }
+        .logo-text { font-weight: 700; font-size: 16px; color: #fff; }
+        .nav-links { display: flex; gap: 25px; list-style: none; align-items: center; }
+        .nav-links a { font-size: 14px; font-weight: 500; color: #ccc; transition: 0.3s; }
+        .nav-links a:hover { color: #ff4d4d; }
+        .nav-cta { background: #e50914 !important; color: white !important; padding: 8px 16px; border-radius: 6px; font-weight: 600; }
+
+        /* Hero Section */
+        .hero { padding: 60px 5%; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; background: radial-gradient(circle at 10% 20%, #220808 0%, #121212 60%); }
+        .badge { display: inline-block; background: rgba(229, 9, 20, 0.15); color: #ff4d4d; border: 1px solid rgba(229, 9, 20, 0.3); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 20px; }
+        .hero h1 { font-size: 42px; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+        .hero h1 span { color: #ff4d4d; }
+        .hero p { font-size: 15px; color: #aaa; margin-bottom: 30px; }
+        .hero-btns { display: flex; gap: 15px; margin-bottom: 40px; }
+        .btn-primary { background: #e50914; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; transition: 0.3s; }
+        .btn-primary:hover { background: #c50710; }
+        .btn-outline { border: 1px solid #444; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; transition: 0.3s; }
+        .btn-outline:hover { border-color: #ff4d4d; color: #ff4d4d; }
+        .hero-stats { display: flex; gap: 40px; border-top: 1px solid #222; padding-top: 25px; }
+        .stat-num { font-size: 22px; font-weight: 700; color: #fff; }
+        .stat-desc { font-size: 13px; color: #888; }
+        .hero-card { background: #1a1a1a; border: 1px solid #333; border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .hero-card img { width: 100%; border-radius: 10px; display: block; margin-bottom: 15px; }
+        .hero-card-price { background: #fff; color: #121212; padding: 15px; border-radius: 10px; font-weight: 700; font-size: 18px; display: flex; justify-content: space-between; align-items: center; }
+
+        /* Section Titles */
+        .section-title { text-align: center; padding: 60px 0 40px; }
+        .section-title span { color: #ff4d4d; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .section-title h2 { font-size: 32px; font-weight: 800; color: #fff; margin-top: 8px; }
+
+        /* Categories Grid */
+        .categories { padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .cat-card { background: #181818; border: 1px solid #262626; border-radius: 12px; padding: 25px; transition: 0.3s; }
+        .cat-card:hover { border-color: #ff4d4d; transform: translateY(-5px); }
+        .cat-card h3 { font-size: 18px; color: #fff; margin-bottom: 8px; }
+        .cat-card p { font-size: 13px; color: #999; }
+
+        /* Products Grid */
+        .products { padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .prod-card { background: #1a1a1a; border: 1px solid #282828; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+        .prod-img { width: 100%; height: 200px; object-fit: cover; background: #222; }
+        .prod-body { padding: 20px; }
+        .prod-title { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 15px; }
+        .spec-list { list-style: none; font-size: 13px; color: #aaa; margin-bottom: 20px; }
+        .spec-list li { margin-bottom: 6px; position: relative; padding-left: 15px; }
+        .spec-list li::before { content: "•"; color: #ff4d4d; position: absolute; left: 0; }
+        .prod-footer { padding: 15px 20px; background: #151515; border-top: 1px solid #252525; display: flex; justify-content: space-between; align-items: center; }
+        .price { font-size: 20px; font-weight: 800; color: #ff4d4d; }
+        .btn-buy { background: #e50914; color: white; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; }
+
+        /* Why Choose Us */
+        .features { padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .feature-card { background: #181818; border: 1px solid #262626; padding: 30px; border-radius: 12px; }
+        .feature-num { font-size: 28px; font-weight: 800; color: #333; margin-bottom: 10px; }
+        .feature-card h3 { color: #fff; font-size: 16px; margin-bottom: 6px; }
+        .feature-card p { font-size: 13px; color: #999; }
+
+        /* Contact Section */
+        .contact-section { padding: 60px 5%; background: #151515; margin-top: 60px; border-top: 1px solid #222; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contact-info h2 { font-size: 28px; color: #fff; margin-bottom: 20px; }
+        .info-item { margin-bottom: 15px; font-size: 14px; color: #ccc; }
+        .info-item strong { color: #fff; display: block; margin-bottom: 3px; }
+        .map-box { width: 100%; height: 300px; background: #222; border-radius: 12px; overflow: hidden; border: 1px solid #333; }
+        .map-box iframe { width: 100%; height: 100%; border: 0; }
+
+        /* Floating buttons */
+        .float-btns { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
+        .float-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .zalo-btn { background: #0068ff; }
+        .phone-btn { background: #e50914; }
+
+        /* Footer */
+        footer { background: #0d0d0d; padding: 30px 5%; text-align: center; font-size: 13px; color: #777; border-top: 1px solid #222; }
+
+        @media (max-width: 768px) {
+            .hero, .contact-section { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>📍 Cơ sở chính: Thiệu Hóa, Thanh Hóa</span>
+        <span>🕒 Mở cửa tất cả các ngày trong tuần</span>
+        <span>📞 Hotline / Zalo: <a href="tel:0988373446">0988 373 446</a></span>
+    </div>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            <div class="logo-box">HLT</div>
+            <div class="logo-text">Máy Tính Tiến Hạnh<br><span style="font-size: 11px; color: #aaa; font-weight: 400;">HaLin Tech - Uy tín & Chất lượng</span></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#danhmuc">Danh mục</a></li>
+            <li><a href="#sanpham">Cấu hình PC</a></li>
+            <li><a href="#camket">Cam kết</a></li>
+            <li><a href="#lienhe">Liên hệ</a></li>
+            <li><a href="https://zalo.me/0988373446" class="nav-cta" target="_blank">Gọi 0988 373 446</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <div class="badge">UY TÍN - GIÁ RẺ - CHẤT LƯỢNG</div>
+            <h1>Máy Tính Tiến Hạnh <br><span>PC Gaming · Workstation · Linh Kiện</span></h1>
+            <p>Chuyên cung cấp máy tính gaming, máy văn phòng, linh kiện phần cứng, server Xeon chuyên dụng và dịch vụ cứu dữ liệu, sửa chữa chuyên sâu. Tư vấn đúng nhu cầu, đúng ngân sách.</p>
+            <div class="hero-btns">
+                <a href="#sanpham" class="btn-primary">Xem cấu hình đang bán</a>
+                <a href="https://zalo.me/0988373446" target="_blank" class="btn-outline">Tư vấn qua Zalo</a>
+            </div>
+            <div class="hero-stats">
+                <div>
+                    <div class="stat-num">Xeon & i5</div>
+                    <div class="stat-desc">Chuyên gia phần cứng</div>
+                </div>
+                <div>
+                    <div class="stat-num">COD</div>
+                    <div class="stat-desc">Kiểm tra hàng rồi thanh toán</div>
+                </div>
+                <div>
+                    <div class="stat-num">Dài hạn</div>
+                    <div class="stat-desc">Bảo hành uy tín tận tâm</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-card">
+            <div style="background: #252525; height: 220px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #777; font-weight: 600; margin-bottom: 15px;">
+                HLT HaLin Tech Workstation
+            </div>
+            <div class="hero-card-price">
+                <span>Trọn bộ PC Gaming / Đồ họa</span>
+                <span style="color: #e50914;">Từ 4.900.000đ</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Danh mục -->
+    <div class="section-title" id="danhmuc">
+        <span>Danh mục</span>
+        <h2>Máy Tính Tiến Hạnh cung cấp gì?</h2>
+    </div>
+    <div class="categories">
+        <div class="cat-card">
+            <h3>PC Gaming - Đồ Họa</h3>
+            <p>Cấu hình tối ưu từ Intel Xeon, Core i5/i7, card rời VGA phục vụ chiến game và render mượt mà.</p>
+        </div>
+        <div class="cat-card">
+            <h3>PC Văn Phòng & X99</h3>
+            <p>Hệ thống đa nhiệm bền bỉ, chạy giả lập, làm việc văn phòng và chạy trạm server ổn định.</p>
+        </div>
+        <div class="cat-card">
+            <h3>Linh Kiện Máy Tính</h3>
+            <p>Mainboard X99/H610, RAM ECC, SSD NVMe tốc độ cao, nguồn công suất thực và vỏ case LED.</p>
+        </div>
+        <div class="cat-card">
+            <h3>Sửa Chữa & Cứu Dữ Liệu</h3>
+            <p>Khắc phục lỗi boot, cứu dữ liệu ổ cứng Kingston/ADATA chuyên sâu, tối ưu hệ thống WinPE.</p>
+        </div>
+    </div>
+
+    <!-- Sản phẩm nổi bật -->
+    <div class="section-title" id="sanpham">
+        <span>Cấu hình nổi bật</span>
+        <h2>PC Lắp Ráp Sẵn – Giá Tốt Nhất</h2>
+    </div>
+    <div class="products">
+        <!-- Sản phẩm 1 -->
+        <div class="prod-card">
+            <div>
+                <div style="background: #222; height: 180px; display: flex; align-items: center; justify-content: center; color: #666;">Ảnh PC E5-2676 V3</div>
+                <div class="prod-body">
+                    <div class="prod-title">PC Xeon 12 nhân 24 luồng - RAM 32GB</div>
+                    <ul class="spec-list">
+                        <li>CPU Xeon E5-2676 V3 (12 nhân / 24 luồng)</li>
+                        <li>RAM Samsung 32GB ECC Server</li>
+                        <li>VGA rời chiến game & đồ họa</li>
+                        <li>SSD NVMe 256GB tốc độ cao</li>
+                        <li>Nguồn CST mới + Vỏ kính LED RGB</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="prod-footer">
+                <div class="price">5.600.000đ</div>
+                <a href="https://zalo.me/0988373446" target="_blank" class="btn-buy">Đặt mua</a>
+            </div>
+        </div>
+
+        <!-- Sản phẩm 2 -->
+        <div class="prod-card">
+            <div>
+                <div style="background: #222; height: 180px; display: flex; align-items: center; justify-content: center; color: #666;">Ảnh PC i5 Gaming</div>
+                <div class="prod-body">
+                    <div class="prod-title">PC Gaming Core i5 - Đồ Họa & Game</div>
+                    <ul class="spec-list">
+                        <li>CPU Intel Core i5 hiệu năng cao</li>
+                        <li>Mainboard hỗ trợ bền bỉ</li>
+                        <li>RAM 16GB DDR4 tản nhiệt</li>
+                        <li>SSD NVMe 256GB + Nguồn CST 600W</li>
+                        <li>Vỏ kính cường lực bể cá sang trọng</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="prod-footer">
+                <div class="price">9.900.000đ</div>
+                <a href="https://zalo.me/0988373446" target="_blank" class="btn-buy">Đặt mua</a>
+            </div>
+        </div>
+
+        <!-- Sản phẩm 3 -->
+        <div class="prod-card">
+            <div>
+                <div style="background: #222; height: 180px; display: flex; align-items: center; justify-content: center; color: #666;">Ảnh Workstation X99</div>
+                <div class="prod-body">
+                    <div class="prod-title">Workstation Chạy Đa Nhiệm / Giả Lập</div>
+                    <ul class="spec-list">
+                        <li>Chuyên dụng chạy 70+ tab trình duyệt, giả lập</li>
+                        <li>Mainboard X99 cấu hình khủng</li>
+                        <li>RAM LRDIMM ECC dung lượng lớn</li>
+                        <li>Ổ cứng SSD tốc độ đọc ghi cực nhanh</li>
+                        <li>Tản nhiệt khí hiệu năng cao</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="prod-footer">
+                <div class="price">Liên hệ báo giá</div>
+                <a href="https://zalo.me/0988373446" target="_blank" class="btn-buy">Tư vấn ngay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cam kết -->
+    <div class="section-title" id="camket">
+        <span>Tại sao chọn chúng tôi</span>
+        <h2>Cam kết dịch vụ tại HaLin Tech</h2>
+    </div>
+    <div class="features">
+        <div class="feature-card">
+            <div class="feature-num">01</div>
+            <h3>Tư vấn đúng nhu cầu</h3>
+            <p>Đúng cấu hình, đúng ngân sách thực tế của khách hàng, tuyệt đối không bán thừa thãi chi phí.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-num">02</div>
+            <h3>Linh kiện chính hãng</h3>
+            <p>Linh kiện tuyển chọn kỹ lưỡng, bảo hành minh bạch rõ ràng từng món.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-num">03</div>
+            <h3>Cài đặt sẵn sàng</h3>
+            <p>Tối ưu hóa hệ thống Win 10/11 Pro, cài sẵn phần mềm, tối ưu boot và bàn giao tận tay.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-num">04</div>
+            <h3>Giao hàng COD toàn quốc</h3>
+            <p>Nhận hàng, kiểm tra vận hành ưng ý mới thanh toán tiền an tâm tuyệt đối.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-num">05</div>
+            <h3>Hỗ trợ kỹ thuật tận tâm</h3>
+            <p>Đồng hành lâu dài, xử lý sự cố nhanh chóng bằng chuyên môn kỹ thuật sâu rộng.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-num">06</div>
+            <h3>Giá thành cạnh tranh</h3>
+            <p>Sguồn linh kiện nhập trực tiếp tối ưu chi phí tốt nhất cho người dùng.</p>
+        </div>
+    </div>
+
+    <!-- Liên hệ -->
+    <section class="contact-section" id="lienhe">
+        <div class="contact-info">
+            <h2>Ghé cửa hàng hoặc nhắn Zalo để được tư vấn nhanh nhất</h2>
+            <div class="info-item">
+                <strong>Cửa hàng chính:</strong>
+                Thiệu Hóa, Thanh Hóa
+            </div>
+            <div class="info-item">
+                <strong>Hotline / Zalo kỹ thuật & bán hàng:</strong>
+                0988 373 446
+            </div>
+            <div class="info-item">
+                <strong>Giờ làm việc:</strong>
+                Mở cửa tất cả các ngày trong tuần (8:00 - 21:00)
+            </div>
+            <div style="margin-top: 25px; display: flex; gap: 15px;">
+                <a href="tel:0988373446" class="btn-primary">Gọi ngay: 0988 373 446</a>
+                <a href="https://zalo.me/0988373446" target="_blank" class="btn-outline">Nhắn tin Zalo</a>
+            </div>
+        </div>
+        <div class="map-box">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.902!2d105.65!3d19.95!2m3!1f0!2f0!3f0!3m2!1f1024!2f768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zVGhp4buBdSBIw7NhLCBUaGFuaCBIw7Nh!5e0!3m2!1svi!2svn!4v1600000000000!5m2!1svi!2svn" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Floating Buttons -->
+    <div class="float-btns">
+        <a href="https://zalo.me/0988373446" target="_blank" class="float-btn zalo-btn" title="Chat Zalo">Zalo</a>
+        <a href="tel:0988373446" class="float-btn phone-btn" title="Gọi ngay">📞</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Máy Tính Tiến Hạnh - HaLin Tech. Hotline/Zalo: 0988 373 446</p>
+    </footer>
+
+</body>
+</html>
